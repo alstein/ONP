@@ -83,17 +83,19 @@ jQuery.validator.addMethod("emailchk", function(value, element) {
 						emailchk:true,
 						remote: SITEROOT + "/admin/user/ajax_check_user.php?userid="+userid
 					},
-					password:{
+					/*password:{
+                                                required: false,
 						minlength: 6,
 						maxlength: 20,
 						noSpace: true
 					},
 					new_password:{
+                                                    required: false,
 							equalTo: "#password",
 							minlength: 6,
 							maxlength: 20,
 							noSpace: true
-					},
+					},*/
 					business_name: {
 						required: true,
 						minlength: 3,
@@ -174,7 +176,7 @@ jQuery.validator.addMethod("emailchk", function(value, element) {
 						remote: "This email address is already in use"
 						
 					},
-					password:{
+					/*password:{
 						required: "please enter password",
 						noSpace: "Space is not allowed",
 						minlength: $.format("Enter at least {0} characters"),
@@ -184,7 +186,7 @@ jQuery.validator.addMethod("emailchk", function(value, element) {
 							equalTo: "please enter password same as above",
 						minlength: jQuery.format("Enter at least {0} characters"),
 						maxlength: jQuery.format("Enter at most {0} characters")
-					},
+					},*/
 					business_name:{
 						required: "Please enter business name",
 						minlength: $.format("Enter at least {0} characters"),
