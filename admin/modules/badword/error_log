@@ -1,0 +1,3 @@
+[23-Mar-2011 12:32:54] PHP Fatal error:  Cannot use object of type stdClass as array in /home/groupbuy/public_html/admin/modules/badword/badword-list.php on line 79
+[23-Mar-2011 12:34:35] PHP Fatal error:  Cannot use object of type stdClass as array in /home/groupbuy/public_html/templates_c/%%0A^0A5^0A5984BA%%addbadword.tpl.php on line 64
+[03-Jun-2011 06:42:13] PHP Fatal error:  Cannot use object of type stdClass as array in /home/groupbuy/public_html/templates_c/%%0A^0A5^0A5984BA%%addbadword.tpl.php on line 64

@@ -1,0 +1,11 @@
+/***********   To Display Error Message  *********************/
+.error{font-family:Arial, Verdana, Helvetica, sans-serif; color:#FF0707;}
+
+.errorMsg{font-family:Arial, Verdana, Helvetica, sans-serif;	margin: 10px 0px 10px 0px;	padding: 5px;	border: solid 1px #d74831;	background: #fff;	text-align:left;}
+
+.successMsg{font-family:Arial, Verdana, Helvetica, sans-serif;	margin: 10px 0px 10px 0px;	padding: 5px;	border: solid 1px #d74831;	background:#F2FFEF;	font-weight:bold;	text-align:left;}
+
+#errorMsg{	font-family:Arial, Verdana, Helvetica, sans-serif;	margin: 10px 0px 10px 0px;	padding: 5px;	border: solid 1px #EF9C86;	background: #ffebe8;	text-align:left;}
+
+#successMsg{	font-family:Arial, Verdana, Helvetica, sans-serif;	margin: 10px 0px 10px 0px;	padding: 5px;	border: solid 1px #99DF99;	background:#F2FFEF;	font-weight:bold;	text-align:left;}
+

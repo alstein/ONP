@@ -1,0 +1,7 @@
+.popup_window{position:absolute; top:130px;left:487px; width:483px; background:#fff; border:1px solid #829F1B; padding:0px; min-height:0px; font-weight:normal;}
+.popup_heading{float:left;  font-weight:bold; cursor:move; padding:9px 3px 2%; position:relative; background:#829F1B; color:#fff; width:477px}
+.buttons{position:absolute; right:10px; top:9px; cursor:auto;}
+.drag_area{float:left; width:96%;}
+.content{float:left; width:96%;  padding:15px;}
+.left{float:left}
+

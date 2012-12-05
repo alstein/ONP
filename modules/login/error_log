@@ -1,0 +1,18 @@
+[29-Apr-2012 05:46:04] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_a20a35c96c652a72ec15ea10f9610a81, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[29-Apr-2012 10:46:04] PHP Warning:  Unknown: open(/tmp/sess_a20a35c96c652a72ec15ea10f9610a81, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[29-Apr-2012 10:46:04] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-Apr-2012 01:36:25] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_49a013536a21feb3e182a92efc08baf5, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[30-Apr-2012 06:36:25] PHP Warning:  Unknown: open(/tmp/sess_49a013536a21feb3e182a92efc08baf5, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Apr-2012 06:36:25] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-Apr-2012 01:36:31] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_49a013536a21feb3e182a92efc08baf5, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[30-Apr-2012 06:36:32] PHP Warning:  Unknown: open(/tmp/sess_49a013536a21feb3e182a92efc08baf5, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Apr-2012 06:36:32] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-Apr-2012 01:36:38] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_49a013536a21feb3e182a92efc08baf5, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[30-Apr-2012 06:36:38] PHP Warning:  Unknown: open(/tmp/sess_49a013536a21feb3e182a92efc08baf5, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Apr-2012 06:36:38] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[06-May-2012 03:42:25] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[06-May-2012 08:42:25] PHP Warning:  Unknown: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[06-May-2012 08:42:25] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[06-May-2012 03:42:39] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[06-May-2012 08:42:40] PHP Warning:  Unknown: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[06-May-2012 08:42:40] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0

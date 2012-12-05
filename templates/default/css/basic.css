@@ -1,0 +1,214 @@
+@charset "utf-8";
+/****************************************************************************************************
+* Filename: basic.css
+* Purpose: All the basic CSS Rules required to design web pages.
+* Author: Suraj Naik n[dot]suraj[at]agiletechnosys[dot]com , http://www.agiletechnosys.com
+* Date: 22-01-2012, updated v1 - 25-01-2012
+****************************************************************************************************/
+
+/* GLOBAL RESET (killer :P)
+**********************************************************/
+body,h1,h2,h3,h4,h5,h6,p {margin:0; line-height:1}
+input[type="radio"], input[type="checkbox"] {margin:0; vertical-align:-2px}
+a:link, a:active, a:visited {text-decoration:none}
+a:active, a:focus, textarea:focus, input:focus{outline: none}
+textarea {overflow:auto; resize:none}
+img {border:none}
+/*table {border-collapse:collapse; border-spacing:0; table-layout:fixed}*/
+
+/* INDIVIDUAL RESETs
+**********************************************************/
+.reset {list-style:none; padding:0; margin:0}
+.nomargin {margin:0}
+.nopadding {padding:0}
+
+/* ALIGN CENTER
+**********************************************************/
+.equalgap {margin:0 auto}
+
+/* FLOATS
+**********************************************************/
+.fl {float:left} .fr {float:right}
+.leftfloated > * {float:left}
+.rightfloated > * {float:right}
+.oppfloats > * {float:right}
+.oppfloats > :first-child {float:left}
+/* first two items float left */
+.threefloats > * {float:right}
+.threefloats > :first-child {float:left}
+.threefloats > :first-child + * {float:left}
+/* first three items float left */
+.fourfloats > * {float:right}
+.fourfloats > :first-child {float:left}
+.fourfloats > :first-child + * {float:left}
+.fourfloats > :first-child + * + * {float:left} 
+
+/* COLUMN STRUCTURE
+**********************************************************/
+*[class*="qtr"] > * {width:25%}
+*[class*="hlf"] > * {width:50%}
+*[class*="trd"] > * {width:33%}
+*[class*="thrforth"] > * {width:25%}
+*[class*="thrforth"] > * + * {width:75%}
+*[class*="anon"] > * {width:33%}
+*[class*="anon"] > * + * {width:66%}
+
+/* GRID FORMULA [just example]
+**********************************************************/
+/* COMMON SELECTOR 
+*[class*="adjuster"] > * {float:left}
+/*grid with a column width of 26px / gutter 8px / 8 columns  
+.grid1 div.adjuster {margin-left:-10px}
+.grid1 div[class*="adjuster width"] {width:960px}
+.grid1 div[class*="adjuster width"] > * {width:110px; background:#FF0000; margin-left:10px; height:100px}*/
+
+/* CLEAR FLOAT
+**********************************************************/
+.clearfix:after, .container:after {content:"\0020"; display:block; height:0; clear:both; visibility:hidden; overflow:hidden}
+.clr {clear:both; overflow:hidden; height:0}
+
+/* WIDTH 100% 
+**********************************************************/
+.fullwid {width:100%}
+
+/* DISPLAYs, POSITIONs & OVERFLOWs 
+**********************************************************/
+.inline {display:inline}
+.ovfl-hidden {overflow:hidden}
+.rel {position:relative}
+.absolute {position:absolute}
+.absoluted > * {position:absolute}
+
+/* ALL TEXT CSS
+**********************************************************/
+/* font SIZES */
+.vsmlTxt {font-size:10px}
+.smlTxt {font-size:11px}
+.paraTxt {font-size:12px}
+.bigTxt {font-size:14px}
+
+/*font WEIGHTS */
+.strong, .strong a {font-weight:bold} 
+.normTxt, .normTxt a {font-weight:normal}
+
+/* text TRANSFORMS */
+.allCaps {text-transform:capitalize}
+.upperCase {text-transform:uppercase}
+.underlined {text-decoration:underline}
+
+/* text ALIGN & content ALIGN for inline level ELEMENTS */
+.centerAll {text-align:center}
+.leftAlign {text-align:left}
+.rightAlign {text-align:right}
+.justified {text-align:justify}
+
+/* MAKE MENUS / TABS / NAVS
+**********************************************************/
+/* make tabs / navs */
+ul.maketabs li.item {float:left; display:inline}
+ul.maketabs li.item a, ul.maketabs li.item a span {display:block; float:left}
+/* make menus/ vertical menus */
+ul.makemenu li.item,ul.makemenu li.item a {display:block;}
+
+/* PADDINGS and MARGINS (north east south west)
+**********************************************************/
+.padwest1 {padding-left:5px}
+.padwest2 {padding-left:10px}
+.padwest3 {padding-left:15px}
+.padwest4 {padding-left:20px}
+.padwest5 {padding-left:25px}
+.padwest6 {padding-left:30px}
+.padeast-1 {padding-right:5px}
+.padeast-2 {padding-right:10px}
+.padeast-3 {padding-right:15px}
+.padeast-4 {padding-right:20px}
+.padeast-5 {padding-right:25px}
+.padeast-6 {padding-right:30px}
+.westspace-1 {margin-left:5px}
+.westspace-2 {margin-left:10px}
+.westspace-3 {margin-left:15px}
+.westspace-4 {margin-left:20px}
+.westspace-5 {margin-left:25px}
+.westspace-6 {margin-left:30px}
+.eastspace-1 {margin-right:5px}
+.eastspace-2 {margin-right:10px}
+.eastspace-3 {margin-right:15px}
+.eastspace-4 {margin-right:20px}
+.eastspace-5 {margin-right:25px}
+.eastspace-6 {margin-right:30px}
+.padsouth-1 {padding-bottom:5px}
+.padsouth-2 {padding-bottom:10px}
+.padsouth-3 {padding-bottom:15px}
+.padsouth-4 {padding-bottom:20px}
+.padsouth-5 {padding-bottom:25px}
+.padsouth-6 {padding-bottom:30px}
+.padnorth-1 {padding-top:5px}
+.padnorth-2 {padding-top:10px}
+.padnorth-3 {padding-top:15px}
+.padnorth-4 {padding-top:20px}
+.padnorth-5 {padding-top:25px}
+.padnorth-6 {margin-top:30px;padding-top:30px}
+.southspace-1 {margin-bottom:5px}
+.southspace-2 {margin-bottom:10px}
+.southspace-3 {margin-bottom:15px}
+.southspace-4 {margin-bottom:20px}
+.southspace-5 {margin-bottom:25px}
+.southspace-6 {margin-bottom:30px}
+.northspace-1 {margin-top:5px}
+.northspace-2 {margin-top:10px}
+.northspace-3 {margin-top:15px}
+.northspace-4 {margin-top:20px}
+.northspace-5 {margin-top:25px}
+.pad-nesw1 {padding:5px}
+.pad-nesw2 {padding:10px}
+.pad-nesw3 {padding:15px}
+.pad-nesw4 {padding:20px}
+.pad-nesw5 {padding:25px}
+.pad-nesw6 {padding:30px}
+.neswspace1 {margin:5px}
+.neswspace2 {margin:10px}
+.neswspace3 {margin:15px}
+.neswspace4 {margin:20px}
+.neswspace5 {margin:25px}
+.neswspace6 {margin:30px}
+
+/* FIXED WIDTHs
+**********************************************************/
+.span-1 {width:30px}
+.span-10 {width:390px}
+.span-11 {width:430px}
+.span-12 {width:470px}
+.span-13 {width:510px}
+.span-14 {width:550px}
+.span-15 {width:590px}
+.span-16 {width:630px}
+.span-17 {width:670px}
+.span-18 {width:710px}
+.span-19 {width:750px}
+.span-2 {width:70px}
+.span-20 {width:790px}
+.span-21 {width:830px}
+.span-22 {width:870px}
+.span-23 {width:910px}
+.span-24 {width:950px}
+.span-25 {width:990px}
+.span-3 {width:110px}
+.span-4 {width:150px}
+.span-5 {width:190px}
+.span-6 {width:230px}
+.span-7 {width:270px}
+.span-8 {width:310px}
+.span-9 {width:350px}
+
+/* PERCENTAGE BASED WIDTHs
+**********************************************************/
+.size1of1,.fullwid {width:100%}
+.hlf .item,.size1of2 {width:50%}
+.size1of10 {width:10%}
+.size1of3 {width:33.33333%}
+.size1of5 {width:20%}
+.size2of3 {width:66.66666%}
+.size2of5 {width:40%}
+.size3of10 {width:30%}
+.size3of5 {width:60%}
+.size4of5 {width:80%}

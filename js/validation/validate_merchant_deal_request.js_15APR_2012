@@ -1,0 +1,49 @@
+$(document).ready(function() {
+
+	$('#frmdeal').validate({
+		    errorElement:'div',
+		    rules: {
+			name_of_key:{
+				required: true,
+				minlength: 2,
+				maxlength: 50
+				
+			},
+			phone_no:{
+				required: true,
+				number: true
+				
+			},
+			mail:{
+				required: true,
+				email: true,
+			        emailchk: true
+			}
+
+		    },
+		    messages: {
+			name_of_key:{
+				required: "Please enter the name of key.",
+				minlength: jQuery.format("Enter at least {0} characters"),
+				maxlength: jQuery.format("Enter at most {0} characters")
+			
+			},
+			phone_no:{
+				required: "Please enter the phone no.."
+			
+			},
+			mail:{
+				required: "Please enter email.",
+				email: "Please enter correct email address",
+			        emailchk: "Please enter correct email address"
+			}
+			
+			
+		},
+		success: function(label) {
+			// set &nbsp; as text for IE
+			label.hide();
+		}
+        });
+});
+

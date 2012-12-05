@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Google Plus Photo  Album Animation Effect( Photo Stack Animation)with Jquery and CSS3</title>
+<link rel="stylesheet" href="css/reset.css" media="screen">
+<link rel="stylesheet" href="css/style.css" media="screen">
+<style type="text/css">
+ul#pics li {/*css style for the single photo only **/
+	background: none repeat scroll 0 0 #FFFFFF;
+	box-shadow: 1px 1px 1px #999999;
+	display: inline-block;
+	width: 153px;
+	height:157px;
+ -webkit-transition: all .2s ease-in-out;
+ -moz-transition: all .2s ease-in-out;
+ -o-transition: all .2s ease-in-out;
+ -ms-transition: all .2s ease-in-out;
+ transition: all .2s ease-in-out;
+}
+ul#pics li img {/*css style for the single photo only **/
+	width: 150px;
+	height:150px;
+	display: block;
+}
+ul#pics li:hover {/*css style for the single photo only **/
+	-moz-transform: scale(1.1) rotate(0deg);
+	-webkit-transform: scale(1.1) rotate(0deg);
+	-o-transform: scale(1.1) rotate(0deg);
+	-ms-transform: scale(1.1) rotate(0deg);
+	transform: scale(1.1) rotate(0deg);
+}
+.single_photo {/*css style for the single photo only **/
+	margin-top : 80px;
+	margin-left:100px;
+	
+	margin-top:65px;
+}
+h3 {
+	margin:25px;
+}
+a, a:visited, a:hover {
+	color: #54A6DE;
+	outline: medium none;
+	text-decoration: none;
+}
+#footer { /* demo footer text */
+	font-size:9px;
+	margin-top:300px;
+	margin-left: 250px;
+	color: #888888;
+}
+#text {
+	margin-top:10px;
+	margin-left:10px;
+	color: #DD4B39;
+	font-type: arial, sans-serif;
+	font-size:17px;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="js/app.js"></script>
+</head>
+<body>
+<h3> <a href="http://youhack.me/2011/07/15/google-plus-photo-stack-animation-using-jquery-and-css3/">&lt;&lt; Go back to Tutorial</a> </h3>
+<div id="page_wrap">
+  <div id="text"> Google Plus Album Photo</div>
+  
+  <!--Stack 1  -->
+  <div class="image_stack" style="margin-left:600px">
+   <img id="photo1" class="stackphotos" src="photos/2.jpg"  >
+    <img  id="photo2" class="stackphotos" src="photos/3.jpg" >
+     <img   id="photo3" class="stackphotos"  src="photos/1.jpg" > 
+     </div>
+     <!--Stack 2  -->
+  <div class="image_stack" style="margin-left:300px">
+   <img id="photo1" class="stackphotos" src="photos/4.jpg"  >
+    <img  id="photo2" class="stackphotos" src="photos/5.jpg" >
+     <img   id="photo3" class="stackphotos"  src="photos/6.jpg" > 
+     </div>
+     
+  <div class="single_photo">
+    <ul id="pics">
+      <li><a href="#pic1" title="Photo"><img src="photos/3.jpg" alt="picture"></a></li>
+    </ul>
+  </div>
+  
+  
+  
+  
+  <div id="footer" >Photo was taken from flickr :<a href="http://www.flickr.com/photos/doug88888/5798937223/sizes/s/in/photostream/"> Image 1</a> ,<a href="http://www.flickr.com/photos/cubagallery/5769547701/sizes/s/in/photostream/">Image 2</a> , 
+  <a href="http://www.flickr.com/photos/doug88888/4628364139/sizes/s/in/photostream/">Image 3 </a>,
+  <a href="http://www.flickr.com/photos/supersayan1000/3077066112/sizes/m/in/photostream/">Image 4 </a>,
+  <a href="http://www.flickr.com/photos/supersayan1000/3076233725/sizes/m/in/photostream/">Image 5 </a>and
+  <a href="http://www.flickr.com/photos/cubagallery/4303444576/sizes/m/in/photostream/">Image 6 </a></div>
+</div>
+</body>
+</html>

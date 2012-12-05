@@ -1,0 +1,9 @@
+[09-Apr-2012 05:33:13] PHP Warning:  Smarty error: unable to read resource: "default/modules/messages/inbox.tpl" in /home/alsteinp/public_html/includes/libs/Smarty.class.php on line 1095
+[09-Apr-2012 05:33:25] PHP Warning:  Smarty error: unable to read resource: "default/modules/messages/inbox.tpl" in /home/alsteinp/public_html/includes/libs/Smarty.class.php on line 1095
+[09-Apr-2012 05:33:45] PHP Warning:  Smarty error: unable to read resource: "default/modules/messages/inbox.tpl" in /home/alsteinp/public_html/includes/libs/Smarty.class.php on line 1095
+[09-Apr-2012 05:34:06] PHP Warning:  Smarty error: unable to read resource: "default/modules/messages/inbox.tpl" in /home/alsteinp/public_html/includes/libs/Smarty.class.php on line 1095
+[09-Apr-2012 05:34:09] PHP Warning:  Smarty error: unable to read resource: "default/modules/messages/inbox.tpl" in /home/alsteinp/public_html/includes/libs/Smarty.class.php on line 1095
+[09-Apr-2012 05:34:52] PHP Warning:  Smarty error: unable to read resource: "default/modules/messages/inbox.tpl" in /home/alsteinp/public_html/includes/libs/Smarty.class.php on line 1095
+[19-Apr-2012 08:13:19] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_2488b8d7b8711429dcd7a9244250167d, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[19-Apr-2012 13:13:19] PHP Warning:  Unknown: open(/tmp/sess_2488b8d7b8711429dcd7a9244250167d, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[19-Apr-2012 13:13:19] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0

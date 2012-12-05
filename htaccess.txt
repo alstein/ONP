@@ -1,0 +1,106 @@
+
+
+Options -MultiViews
+<IfModule mod_rewrite.c>
+RewriteEngine on 			
+
+# DirectoryIndex _welcome.php
+DirectoryIndex home.php
+
+
+# RewriteRule ^index.php$                                                                                     _welcome.php [QSA,L]
+RewriteRule ^welcome/{0,1}$                                                                                     _welcome.php [QSA,L]
+RewriteRule ^welcome/([a-zA-Z0-9_-]+)$                                                                                  _welcome.php?id1=$1 [QSA,L]
+
+
+RewriteRule ^admin/{0,1}$						admin/_welcome.php
+RewriteRule ^admin/login/{0,1}$                                         admin/login/_welcome.php
+RewriteRule ^admin/index.php$                                           admin/_welcome.php
+RewriteRule ^admin/login/index.php$                                     admin/login/_welcome.php
+
+RewriteRule ^profileinfo   			        modules/registration/profile_info.php
+RewriteRule ^profilestep   			        modules/registration/profile_info_step2.php
+RewriteRule ^profilepicture   			        modules/registration/profile_picture.php
+RewriteRule ^invitation   			        modules/registration/invitation.php
+RewriteRule ^invitefriend   			        modules/registration/invite_friend.php
+RewriteRule ^invitefriend/([a-zA-Z0-9_-]+)$     	modules/registration/invite_friend.php?id=$1
+RewriteRule ^help/$  					modules/help/help.php
+RewriteRule ^forgotpassword  				modules/signin/forgotpassword.php
+RewriteRule ^sellerforgotpassword  			modules/signin/sellerforgotpassword.php
+RewriteRule ^registration/conformation/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/{0,1}$                     modules/registration/conformation.php?code=$1&id=$2
+RewriteRule ^profilehome/([a-zA-Z0-9_-]+)$  	                modules/my-account/my_profile_home.php?friendid=$1
+RewriteRule ^profilehome 	                modules/my-account/my_profile_home.php
+
+RewriteRule ^editprofile  	                modules/my-account/edit_profile.php
+RewriteRule ^change-profilepic  	                modules/my-account/edit_profile_picture.php
+RewriteRule ^viewprofile	                modules/my-account/view_profile.php
+#RewriteRule ^friend/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/view_all_search/{0,1}$                     modules/friend/view_all_search.php?id1=$1&id2=$2&page=$3
+
+RewriteRule  ^friend/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_@.()`'-]+)/view_all_search/page/([a-zA-Z0-9_-]+)/{0,1}  modules/friend/view_all_search.php?id1=$1&id2=$2&page=$3
+RewriteRule  ^friend/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_@.()`'-]+)/view_all_search/{0,1}  modules/friend/view_all_search.php?id1=$1&id2=$2
+
+
+
+RewriteRule  ^friend/([a-zA-Z0-9_-]+)/view_all_friend/page/([a-zA-Z0-9_-]+)/{0,1}  modules/friend/view_all_friend.php?id1=$1&page=$2
+RewriteRule  ^friend/view_all_friend/page/([a-zA-Z0-9_-]+)/{0,1}  modules/friend/view_all_friend.php?page=$1
+
+RewriteRule  ^friend/([a-zA-Z0-9_-]+)/view_all_merchants_fan/page/([a-zA-Z0-9_-]+)/{0,1}  modules/friend/view_all_merchants_fan.php?id1=$1&page=$2
+RewriteRule  ^friend/view_all_merchants_fan/page/([a-zA-Z0-9_-]+)/{0,1}  modules/friend/view_all_merchants_fan.php?page=$1
+
+RewriteRule  ^deal/viewalldeal/page/([a-zA-Z0-9_-]+)/{0,1}  modules/deal/viewalldeal.php?page=$1
+RewriteRule  ^merchant-account/view_search_merchant/page/([a-zA-Z0-9_-]+)/{0,1}  modules/merchant-account/view_search_merchant.php?page=$1
+
+RewriteRule  ^deal/deal-notifications/page/([a-zA-Z0-9_-]+)/{0,1}  modules/deal/deal-notifications.php?page=$1
+
+
+RewriteRule ^show_cheered_users/([a-zA-Z0-9_-]+)/{0,1}$	                modules/photos/show_cheered_users.php?imageid=$1
+RewriteRule ^show_cheered_users/([a-zA-Z0-9_-]+)/page/([a-zA-Z0-9_-]+)/{0,1}$	                modules/photos/show_cheered_users.php?imageid=$1&page=$2
+#RewriteRule  ^friend/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/view_all_search/{0,1}  modules/friend/view_all_search.php?id1=$1&id2=$2
+
+
+
+#-----------------------Photos-----------------------------------------------#
+RewriteRule ^([a-zA-Z0-9_-]+)/create-album/{0,1}$				modules/photos/create-album.php?user=$1 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/photos/{0,1}$			modules/photos/photos.php?user=$1&album=$2 [QSA,L]
+#RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/photos/{0,1}$			modules/photos/photos.php?user=$1&album=$2 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/photos/{0,1}$               	modules/photos/photos.php?user=$1&album=$2&page=$3 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/details/{0,1}$		modules/photos/details.php?user=$1&albumid=$2&id2=$3&id3=$4 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/addphotos/{0,1}$			modules/photos/addphotos.php?user=$1&album=$2 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_@.()`'-]+)/albumphotos/{0,1}$				modules/photos/album.php?user=$1 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/albumphotos/{0,1}$			modules/photos/album.php?user=$2&privacy=$1 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/albumphotos/{0,1}$          modules/photos/album.php?user=$2&privacy=$1&page=$3 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/albumphotosinDetails/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/{0,1}$          modules/photos/ajaximageslider.php?user=$1&album=$2&imageid=$3 [QSA,L]
+
+# RewriteRule ^([a-zA-Z0-9_-]+)/albumphotosinDetails/{0,1}$          modules/photos/ajaximageslider.php?user=$1&album=$2&imageid=$3 [QSA,L]
+#-----------------------Photos-----------------------------------------------#
+# RewriteRule ^message/([a-zA-Z0-9_-]+)/messages/{0,1}$                                             modules/message/inbox.php?to_userid=$1
+
+
+RewriteRule ^message/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/view_message/{0,1}$                                             modules/message/view_message.php?msg_id=$1&status=$2
+
+
+#RewriteRule ^friend/([a-zA-Z0-9_-]+)/([^/.]+)/view_all_search/{0,1}$                     modules/friend/view_all_search.php?id1=$1&id2=$2&id3=$3
+
+RewriteRule ^my-account/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/my_profile_home/{0,1}$                     modules/my-account/my_profile_home.php?friendid=$1&id1=$2
+
+# buy deal
+RewriteRule ^buy/([a-zA-Z0-9_-]+)/{0,1}$     	modules/deal/viewdeal.php?deal_id=$1
+
+RewriteRule ^([a-zA-Z0-9_-]+)/{0,1}$                                                                        modules/$1/$1.php
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/{0,1}$                                                       modules/$1/$2.php
+RewriteRule ^([a-zA-Z0-9_-]+)/([^/.]+)/([a-zA-Z0-9_-]+)/{0,1}$                                              modules/$1/$3.php?id1=$2
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/{0,1}$                     modules/$1/$4.php?id1=$2&id2=$3
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/{0,1}$    modules/$1/$5.php?id1=$2&id2=$3&id3=$4
+
+#  Module htaccess end
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule .+ - [L]
+
+	# Page not found
+	ErrorDocument 400 http://offersnpals.com/
+	ErrorDocument 401 http://offersnpals.com/
+	ErrorDocument 403 http://offersnpals.com/
+	ErrorDocument 404 http://offersnpals.com/
+	ErrorDocument 500 http://offersnpals.com/
+

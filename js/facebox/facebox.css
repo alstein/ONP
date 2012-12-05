@@ -1,0 +1,122 @@
+#facebox .b {
+  background:url(images/b.png);
+}
+
+#facebox .tl {
+  background:url(images/tleft.png);
+}
+
+#facebox .tr {
+  background:url(images/tright.png);
+}
+
+#facebox .bl {
+  background:url(images/bleft.png);
+}
+
+#facebox .br {
+  background:url(images/bright.png);
+}
+
+#facebox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  text-align: left;
+}
+
+#facebox .popup {
+  position: relative;
+}
+
+#facebox table {
+  border-collapse: collapse;
+}
+
+
+
+#facebox .body {
+  padding: 0px;
+  background: #fff;
+  width: 370px;
+}
+
+#facebox .close{
+  position:absolute;
+  top:-14px;
+  right:-12px;
+  padding:2px;
+  /*background:#fff;*/
+  z-index:999;
+}
+#facebox .close img{
+  opacity:0.9;
+}
+#facebox .close:hover img{
+  opacity:1.0;
+}
+
+#facebox .loading {
+  text-align: center;
+}
+
+#facebox .image {
+  text-align: center;
+}
+
+#facebox img {
+  border: 0;
+  margin: 0;
+}
+
+#facebox .footer {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+#facebox .tl, #facebox .tr, #facebox .bl, #facebox .br {
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+
+#facebox_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+}
+
+.facebox_hide {
+  z-index:-100;
+}
+
+.facebox_overlayBG {
+  background-color: #000;
+  z-index: 99;
+  opacity: 0.50;
+}
+
+* html #facebox_overlay { /* ie6 hack */
+  position: absolute;
+  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+.gradBg {/*background:url(images/gradBg.gif) repeat-x left top; */padding:0 6px 7px 0; color:#FFF; font-weight:bold; background-color:#333; font-size:24px; font-weight:normal}
+.gradBg a {font-size:24px; font-weight:normal; color:#ffff99}
+.gradBg a:hover {text-decoration:none}
+.gradBg a span {color:#fff}
+.gradBg a span label {text-decoration:underline; color:#ffff99}
+.bg{/*background:#f3f3f3;*/ padding:5px}
+.gradBtnBg {background:url(images/gradBg.gif) repeat-x left top;color:#FFF; font-weight:bold; border:1px solid #666}
+
+.error{font-family:Arial, Verdana, Helvetica, sans-serif; color:#FF0707;}
+
+
+
+.content {padding:2px; background-color:#ffffff; position:relative; z-index:800;}

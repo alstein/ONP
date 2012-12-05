@@ -1,0 +1,4 @@
+[25-Apr-2012 05:29:00] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/alsteinp/public_html/admin/modules/faq/faq_list.php on line 21
+[25-Apr-2012 05:29:00] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/alsteinp/public_html/admin/modules/faq/faq_list.php:21) in /home/alsteinp/public_html/admin/modules/faq/faq_list.php on line 42
+[25-Apr-2012 05:33:58] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/alsteinp/public_html/admin/modules/faq/faqcategory_list.php on line 15
+[25-Apr-2012 05:33:58] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/alsteinp/public_html/admin/modules/faq/faqcategory_list.php:15) in /home/alsteinp/public_html/admin/modules/faq/faqcategory_list.php on line 37

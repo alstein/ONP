@@ -1,0 +1,468 @@
+@charset "utf-8";
+/* CSS Document */
+
+/****************************************************************************************************
+*	Filename: layout.css
+*	Purpose:  CSS for layout 
+
+// How to find a partcular selector ...?
+**search the id (HEADING ID) to get css related / applied to partcular html tag**
+	
+HTML TAGS/MODULES			HEADING ID		DESCRIPTION
+----------------------------------------------------------------------------------------------------
+body/common						GENERIC				All common effects..where in you do need to apply css
+Text									TEXTALL				Text effects, font sizes, hover effects
+form elemetns					FORM					All form related elemetns such as input, label, text area
+UL/LIs								MENUS					All types of menus, tabs structure..
+H Tags								HEADELE				All header tags h1 to h5
+Customized input			INPUTALL			All form tags such as buttons, input boxes, combo boxes
+background colors			BGs						All pure color backgrounds
+
+Please keep this css sequence:
+**************************************************************************************************** please start over now/
+
+/* BODY, FONT AND COLOR, GLOBAL	(id=GENERIC)
+**********************************************************/
+body 				{font:normal 12px Arial !important; color:#333333; text-align:left; background:transparent url(../images/admin/bodyBg.gif) repeat scroll left top;}
+body,form,h1,h2,h3,h4,h5,h6,p	{padding:0; margin:0;}
+h1,h2,h3,h4,h5,h6,label,a	{text-decoration:none;}
+.ext				{color:#FF6600; font-weight:bold; text-decoration:none;}
+a 		    {color:#333333; text-decoration:none;}
+a:hover 		    {color:#b72929; text-decoration:underline;}
+a:active, a:focus   {outline:0} /* to avoid link borders on new browsers */
+img					{border:none;}
+ul,li				{padding:0; margin:0; list-style:none;}
+
+
+/** niftycorners	**/
+
+/** HEADER ELEMENTS STYLING	(id=HEADELE) **/
+h1.login				{font-size:18px !important; color:#30c31d;}
+h1 img			{padding-right:10px;}
+h2.login				{color:#000; padding-bottom:10px; font-weight:bold;}
+h1.head {background:url(../images/admin/allHeadBg.gif) repeat-x left top; padding:3px; color:#666; text-transform:uppercase; border-bottom:1px solid #CCC; font:bold 12px Arial}
+
+/** FORM ELEMENTS STYLING (id=FORM) **/
+.breadcrumb	 	{color:#26569E; font-weight:normal; padding-left:10px}
+.breadcrumb a 		{color:#547029; font-weight:normal}
+.breadcrumb a:hover	{color:#547029; font-weight:normal}
+
+/** ONLY FOR BROWSERS OTHER THAN IE-6 **/
+.textbox		{border:1px solid #ababab;  background:#f6f3f3; padding:2px;}
+.selectbox	{border:1px solid #ababab;  background:#f6f3f3; padding:2px;}
+input.button1 	    {padding-left:20px; padding-right:0px; margin-right:10px; border:0; background:url(../images/admin/buttonbg.gif) left top  no-repeat; color:#FFF; height:29px; padding-bottom:5px;  /* used to catch the buttonEnding */  position:relative; cursor:pointer; font-size:13px;}
+.buttonEnding1      {position:absolute; display:inline; margin-left:-10px; width:20px; height:29px; background: url(../images/admin/buttonbg.gif)  right top no-repeat;}
+
+/** debugging block level elements **/
+/* div					{border:1px solid #0000FF;} */
+
+/* 	BODY WRAPPER / HEADER / TOP MENU 
+**********************************************************/
+#mainWrapper	{margin:0 auto; /*width:970px; */border:1px solid #999999; margin-top:5px; background:#FFFFFF none repeat scroll 0 0;overflow:hidden;}
+#header			{width:100%; background:) bottom no-repeat center;}
+#logo			{width:240px; height:72px; padding:20px 0px 0px 0px; display:inline; }
+#logout			{width:80px; float:left; text-align:center; padding-bottom:20px;}
+#welcome		{ font-size:10px; font-weight:bold; color:#FFFFFF}
+#welcome   a	{ font-size:10px; font-weight:bold; color:#FFFFFF}
+#welcome a:hover{ font-size:10px; font-weight:bold; color:#FFFFFF}
+
+/* 	RESUBALE UL LI / MENUS / 	(id=menus)
+**********************************************************/
+.tab01				{padding:10px; padding:0 0 10px 0;}
+.tab01 a			{text-decoration:none; padding:0 10px;  font-weight:normal;   }
+
+
+ul.innerNavi { padding:10px }
+ul.innerNavi li{display:block; padding:3px}
+ul.innerNavi li a{font-weight:normal;}
+ul.innerNavi li img { padding:0 5px}
+ul.innerNaviicon li	{background:url(../images/icons/tag_blue.png) no-repeat left top; padding-left:18px;}
+
+ul.menu li{  width:95%; padding:3px 0; margin-top:4px}
+ul.menu li{ float:left; display:inline; margin-right:-15px}
+ul.menu li a{ background:url(../images/admin/divider.gif) right top no-repeat; font:bold 12px arial; color:#336699; padding:2px 12px 2px 13px}
+ul.menu li a.none { background:none;}
+
+/* 	MAIN CONTENT  (to position the content)
+**********************************************************/
+#maincont			{width:100%; margin-top:0px; min-height: 400px;}
+#maincont .top		{background:url(../images/admin/roundTop.gif) top no-repeat center; height:14px; overflow:hidden;}
+#maincont .top	{background:url(../images/admin/topRound.png) bottom no-repeat center; height:22px;}
+.Mhight				{min-height:410px;}
+*html.Mhight		{height:410px;}
+
+.contleft			{width:49%; float:left; border-right:1px solid #d6d4d4;}
+.contright			{width:49%; float:left; padding-left:1%;}
+
+
+/* 	MODULES
+**********************************************************/
+
+.allHeadbrdBg {border:1px solid #CCC; background:#FFF; padding:3px 0 0 2px;}
+
+/* 	RESUBALE PURE BACKGROUNDS			(id=BGs)
+**********************************************************/
+.bgWht				{background:#FFF;}
+.BlueBg				{background:#4B8DC5;}	
+
+.topLinkBg { background:url(../images/admin/top-link-bg.gif) repeat-x left top; border-bottom:1px solid #999; padding:3px}
+.headTabsBg {background:url(../images/admin/innertabBg.gif) repeat-x left top; padding:3px 0 0 2px; color:#666; text-transform:uppercase; border:1px solid #CCC;font:bold 12px Arial;float:left;/* width:99%;*/}
+.bgGray {background:#cccccc;} 	
+
+/* 	RESUBALE GRADIENTS
+**********************************************************/  
+
+/* 	MAKE ME ROUND
+**********************************************************/
+.bottom				{background:url(../images/admin/btmcor.png) left bottom no-repeat; height:5px}
+.topcorner			{background:url(../images/admin/topcor.png) left top no-repeat; height:5px}
+
+/* 	ALL TEXT CSS	(id=textAll)
+**********************************************************/
+/* font weights */
+td.step			  {padding: 7px 10px 7px 5px; font-size: 28pt; color: #CCCCCC; font-weight: bold; vertical-align: top; text-align: center;}
+.strong			  {font-weight:bold;}
+.smlTxt			  {font-size:11px;}
+.para			  {font-size:12px;}
+.normTxt		  {font-weight:normal;}
+.largeText		  {font-size:15px;}
+.bigText		  {font-size:18px;}
+/* text transform */
+.allCaps		  {text-transform:capitalize;}
+.textU			  {text-decoration:underline;}
+/* text align & content align inside a particular element */
+.centerall		  {text-align:center;}
+.alignLeft		  {text-align:left;}
+.alignRight		  {text-align:right;}
+.justify		  {text-align:justify;}
+/* colored text */
+.blackTxt         {color:#000000;}
+.bluetxtone		  {color:#64c0e2;}
+.blueTxt		  {color:#0000CC; }
+.blueTxtTwo		  {color:#27569f; font:bold 12px Trebuchet MS; }
+.green			  {color:#006600;}
+.red			  {color:#FF0000;}
+/* others */
+
+/*  ALL Messages  */
+.error			  {color:#CC0033;}
+.alert  		  {color:#FF8000;}
+.success		  {color:#87B400;}
+
+.ac {text-align: center}
+.al {text-align: left}
+.ar {text-align: right}
+
+.fl {float:left}
+.fr {float:right}
+
+/* 	ALL INPUT & FORM CLASSES	(id=inputAll)
+**********************************************************/
+.search {background:url(../images/admin/search.png) left top no-repeat; padding:2px 2px 2px 15px; height:18px; border:0px; float:right;}
+.searchbutton	  {background:url(../images/admin/search.png) right top no-repeat; padding:2px 15px 5px 15px; height:22px; border:0px; color:#FFFFFF; cursor:pointer;}
+
+
+/* 	ALL BORDER CSSs
+**********************************************************/
+
+
+/* 	REQUIRED PADDINGS / MARGINS 
+**********************************************************/
+.padOne		    {padding:8px 8px 8px 8px;}
+.padTop10		{padding-top:10px;}
+.pad3			{padding:0 10px;}
+#nextCont		{min-height:450px;}
+.padtop2		{padding-top:60px;}
+.inipic			{padding:4px; border:1px solid #999999; margin:8px}
+
+.width10 {width:9%}
+.width20 {width:19%}
+.width30 {width:29%}
+.width40 {width:39%}
+.width50 {width:49%}
+.width60 {width:59%}
+.width70 {width:69%}
+.width80 {width:79%}
+.width90 {width:89%}
+.width100 {width:99%}
+	
+/* 	FOOTER 
+**********************************************************/
+.padTwo {padding:10px !important;}
+
+.padtop			{padding-top:20px;}
+
+/* 	MISCELLANEOUS
+**********************************************************/
+.holdthis	   	{width:100%; float:left;}
+.holdthisTop	{width:82%; float:left; padding-top:10px;}
+
+/* 	INNERPAGE CONTENT
+**********************************************************/
+
+.Loginbox		    {width:458px; margin:0px auto;  }
+
+.mainmenu		    {width:330px;}
+.mainmenubox	    {margin:0 0 8px 8px; padding:7px; width:86px; height:86px; float:left; background:#efffed; border:1px solid #30c31d; text-align:center;}
+.mainmenuboxon	    {background:#f5f5f5; border:1px solid #fdb00a;  margin:0 0 8px 8px; padding:7px; width:86px; height:86px; float:left; text-align:center; text-align:center;}
+.mainmenubox img	{padding-bottom:5px;}
+.mainmenubox a		{display:block; text-decoration:none; color:#000000; font-weight:normal;}
+
+.mainmenuboxon img	{padding-bottom:5px;}
+.mainmenuboxon a	{display:block; text-decoration:none; color:#000000; font-weight:normal;}
+
+.clr				{clear:both;}
+
+.innerpagemenu		{border-top:1px solid #30c31d; border-bottom:1px solid #30c31d;	padding:8px 0; }
+
+.contentBox			{margin:0px; padding:7px; background:#efffed; border:1px solid #30c31d;}
+
+.mainmenuboxon2		{background:#f5f5f5; border:1px solid #fdb00a;  margin:0; padding:5px; width:70px; height:70px; float:left; text-align:center; text-align:center;}
+.mainmenuboxon2 img	{padding-bottom:5px;}
+.mainmenuboxon2 a				{display:block; text-decoration:none; color:#000000; font-weight:normal;}
+
+td.stat0 {border:1px solid #999999; padding: 5px; padding-left: 8px;}
+
+.listtable					{border:1px solid #a4a3a3}
+.listtable	td				{padding:5px;}
+.listtable1					{border:1px solid #a4a3a3}
+.listtable1	td				{padding:0px;}
+.headbg						{background:#7b7a7a; color:#FFFFFF; font-weight:bold;}
+.headbg a					{color:#FFFFFF; font-weight:bold;}
+.headbg a:hover				{color:#FFFFFF; font-weight:bold;}
+tr.grayback {background:#f4f4f4 none repeat scroll 0%; border-top:1px solid #000; border-bottom:1px solid #000;}
+tr.grayback:hover {background:#eaeaea none repeat scroll 0%; border-top:1px solid #000; border-bottom:1px solid #000;}
+tr.selectedrow				{background:#FFEDC2}
+
+.conttable			{border:1px solid #666666}
+.conttableDkBg		{background-color:#E8E8E8}
+
+a .Tooltip					{display:none;}
+a:hover .Tooltip					{display:block; border:1px solid #129acc; background:#FFF; padding:2px; position:relative; margin:15px 0 0 0; width:200px;}
+
+
+#globnav {background:url(../images/menuBg.gif) no-repeat; margin-top:10px;}
+#globnavlab {background:url(../images/menuBg.gif) no-repeat; margin-top:0px;}
+
+#nav {float:left; padding:0; margin:0}
+#nav li{position:relative;  z-index:1000; float:left; display:inline}
+#nav li a {font-weight:bold; font-size:12px; padding:0 16px 0 0; display:block; float:left}
+#nav li a.lastmnu {background:none}
+#nav li a:hover {text-decoration:none}
+#nav li a.active {background:url(../images/activeBg.gif) left top repeat-x; color:#8a1717; font-weight:normal;}
+#nav li a.active1 {background:url(../images/active_firstBg.gif) left top repeat-x; color:#8a1717; font-weight:normal; padding-left:24px}
+#nav li.hover a {background:url(../images/activeBg.gif) left top repeat-x; color:#8a1717; font-weight:normal;}
+
+#nav ul.SubNav  {width:185px; padding:0; z-index:100; text-indent:10px}
+#nav ul.SubNav li {display:block; width:90%; }
+#nav ul.SubNav li a {padding:0 5px 0 2px; font-weight:normal; display:block; float:none; color:#4a4a4a; font-size:12px; background:url(../images/bullet.gif) left 4px no-repeat}
+#nav ul.SubNav li a:hover{ color:#8a1717; background-position:0 -29px}
+#nav ul.SubNav li.last a.active1{ color:#fd2020; background:#d9dbdf}
+#nav ul.SubNav li.last a.active1:hover{ color:#fd2020; background:#d9dbdf}
+
+#pagination {margin:10px;}
+#pagination b {background:#dee6ec none repeat scroll 0 0;border:1px solid #29567c; color:#29567c;margin:0 2px;padding:5px;}
+#pagination a {background:#dee6ec none repeat scroll 0 0;border:1px solid #dee6ec; color:#f8731b; margin:0 2px; padding:5px;}
+#pagination span {background:#dee6ec none repeat scroll 0 0;border:1px solid #dee6ec;margin:0 2px;padding:5px;}
+
+
+
+/* 	ROLL OVER
+**********************************************************/
+.whitebg					{background:#FFFFFF;}
+.trbg:hover					{background:#F8F8F8;}
+
+/* calendar css
+*******************************************************************/
+.bgwhtmodule	{background:#313233;}
+.bgMod3 {background:url(../images/cal_headBg.gif) repeat-x; height:33px}
+.CalPageTitle {color:#000; font-size:14px;  padding:0px 0 3px 0;}
+.CalImgBRd img {border:solid 1px #fff}
+.grayback1 {background:#3b3c3d}
+.graybg {background:#5a5a5a; color:#e0e0e0;}
+.graybg b {background:#5a5a5a; color:#e0e0e0; padding:10px 0; display:block}
+.grayback1 a {color:#8e8e8e; display:block; padding:25px 40px; border:solid 1px #3b3c3d}
+.grayback1 a:hover {color:#fff; background:#4d4e4f; display:block; border:solid 1px #fff}
+.red1 {background:#FDFFCE; height:70px; border:solid 1px #cae5df}
+.newone1 {background:#FDFFCE; border-bottom:1px dashed #C2CFDF; padding:2px; text-align:left; color:#000}
+.red1 a:hover {color:#ff0000;}
+
+.bgshow1 {color:#666666}
+
+
+.greenBg{background:url(../images/btnbg2.gif) repeat-x; height:33px;}
+.grnBg b{ background-color:#00a185; padding:10px 0; display:block}
+.greenBack{background:url(../images/footer_bg.png) repeat-x; }
+.greenBack a {color:#8e8e8e; display:block;}
+.greenBack a:hover{color:#313233;  display:block;}
+{font-size:11pt;font-weight:normal;}
+
+/*Suggestion box*/
+.brdBTM1{border-bottom:1px solid #d35c08}
+#jSuggestContainer {position:absolute; font: 12px Tahoma; border:1px solid #ffb931; border-top:0; background:#FFF; overflow:auto; max-height:300px;}
+.jSuggestLoading {font-style:italic; padding: 10px; }
+#jSuggestContainer ul, #jSuggestContainer ul li{margin: 0; padding:0; list-style:none;}
+.jTip{cursor:help;}
+#jSuggestContainer ul li{padding: 2px 4px; border-bottom: 1px dotted #ffe594;color:#666; background:#fff9e7; cursor:pointer;}
+#jSuggestContainer ul li.last{border-bottom: 0;}
+#jSuggestContainer ul li.jSuggestHover{background:#ffeaaa; color:#333; }
+
+/*payment info box*/
+.accntsec {border:1px solid #edeaea} 
+.accntsec h3 {background:#f9f9f9; height:30px; color:#87b400; text-indent:15px; font:normal 18px Arial, Helvetica, sans-serif; line-height:30px}
+.accntsec .accntseting {padding:20px; overflow:hidden}
+.accntsec .accntseting .settingformwidth {width:480px}
+.accntsec .accntseting .settinglist {width:137px; border-left:1px solid #8cac20; padding-left:15px}
+.inboxtable {width:795px}
+.inboxtable th {background:#f9f9f9; height:30px; padding-left:10px; font-weight:normal; text-align:left}
+.inboxtable td {padding:0 10px}
+.inboxtable td .innertable {width:662px}
+.inboxtable td .innertable td {padding:10px 0; border-bottom:1px dashed #c0c0c0; vertical-align:top}
+.inboxtable td .innertable td a.star:hover, .inboxtable td .innertable td a.star.active {background:url(../images/star1.png) 0 0 no-repeat; text-decoration:none}
+.inboxtable td .innertable td a.star {background:url(../images/star1.png) 0 -40px no-repeat; display:block; height:12px; width:12px; margin-left:5px; text-decoration:none}
+.inboxtable td .innertable tr.txtsizebold td {font-weight:bold}
+.inboxtable td .innertable tr.txtsizenorm td {font-weight:normal}
+.inboxtable td .innertable td a:hover {text-decoration:underline}
+
+
+.col_L .graybgfiled {
+background:none repeat scroll 0 0 #F9F9F9;
+border:1px solid #E9E6E6;
+padding:10px 0 10px 15px;
+}
+ul.form_seller {
+padding:10px 0 0;
+}
+
+ul.reset, dl.reset, ul.makelist {
+list-style:none outside none;
+margin:0;
+padding:0;
+}
+ul.form_seller li {
+
+height:40px;
+margin-right:20px;
+}
+ul.form_seller li label {
+color:#333333;
+float:left;
+font:14px Arial,Helvetica,sans-serif;
+margin-right:5px;
+padding-top:3px;
+width:135px;
+}
+.selectsecbg2 {
+background:none repeat scroll 0 0 #F9F9F9;
+border:1px solid #E9E6E6;
+padding:6px 10px 6px 15px;
+}
+.col_L .note {
+margin-left:15px;
+min-height:40px;
+padding:10px 0;
+width:100%;
+}
+h3.subhead2 {
+color:#87B400;
+font-size:18px;
+font-weight:normal;
+width:100%;
+}
+.graybutton {
+background:none repeat scroll 0 0 #F2F2F2;
+border:1px solid #C0C0C0;
+cursor:pointer;
+padding:2px;
+text-align:center;
+}
+.payesumm tr.prodeal td {
+border-bottom:1px solid #E9E6E6;
+line-height:20px;
+padding:7px 0;
+}
+.payesumm th {
+background:none repeat scroll 0 0 #F9F9F9;
+padding:7px 0;
+}
+ul.form_seller li .inputbg {
+background:url("../images/inputbg.gif") repeat-x scroll 0 0 transparent;
+border:1px solid #C4C4C4;
+color:#333333;
+font-size:12px;
+padding:4px 4px 5px;
+}
+/* Registration seller */
+ul.form_seller {padding:10px 0 0}
+ul.form_seller li {float:left; height:40px; margin-right:20px}
+ul.form_seller li label {float:left; color:#333333; font:normal 14px Arial, Helvetica, sans-serif; width:135px; margin-right:5px; padding-top:3px}
+ul.form_seller li .label2 {float:left; color:#333333; font:normal 14px Arial, Helvetica, sans-serif; width:100%; margin-right:5px; padding-top:3px}
+ul.form_seller li .label2 a{color:#fd0404}
+ul.form_seller li .label2 a:hover{text-decoration:underline}
+ul.form_seller li label span {color:#ff0000}
+ul.form_seller li .inputbg {background:url(../images/inputbg.gif) 0 0 repeat-x; border:1px solid #c4c4c4; padding:4px 4px 5px; color:#333; font-size:12px}
+ul.form_seller li .selectbg {background:url(../images/inputbg.gif) 0 0 repeat-x; border:1px solid #c4c4c4; padding:4px 4px 3px; color:#333; font-size:12px}
+.col_L {width:450px; margin-top:16px}
+.buttongreen {background:url(../images/spritebg.png) 0 -279px no-repeat; padding-left:17px; cursor:pointer; height:34px; float:left; margin-right:17px}
+.buttongreen .inputbtn {background:url(../images/spritebg.png) 100% -312px no-repeat; height:34px; border:none; cursor:pointer; padding:0 17px 1px 0; float:left; position:relative; margin-right:-15px; color:#2b2b2b; font:normal 16px Tahoma, Geneva, sans-serif; text-shadow:1px 1px 0 #fff}
+
+.ovfl-hidden {
+overflow:hidden;
+}
+
+
+
+/*************Display popup rating css*************/
+
+.breadcrumb { margin-top:8px;}
+
+span.success{ color:#008000;}
+
+
+.rating li{ float:left; margin-right:1px; position:relative;}
+.rating li:hover > .tooltip{ display:block;}
+.tooltip{ display:none; width:384px;/* height:191px; padding:15px 40px 15px 15px;  background: url(../images/tooltipbg.png) no-repeat;*/  position:absolute; left:-390px; top:-78px;}
+.tooltip .ttop{ background:url(../images/tooltiptop.png) no-repeat; height:14px;}
+.tooltip .tbg{ background:url(../images/tooltipmid.png) repeat-y; padding:10px 15px; }
+.tooltip .tbot{ background:url(../images/tooltipbot.png) no-repeat; height:17px; }
+.tooltip .tooltiparrow{ background:url(../images/tooltiparrow.png) no-repeat; width:15px; height:15px; position:absolute; right:-5px; top:80px;}
+
+.rating a { background:url(../images/rating.png) no-repeat -17px 0px; width:17px; height:17px; display:block;}
+.rating a:hover, .rating a.act { background:url(../images/rating.png) no-repeat 0px 0px; width:17px; height:17px; display:block;}
+
+.tooltip .list li{ padding-bottom:6px; border-bottom:solid 1px #f2f2f2;margin:0px; margin-bottom:6px; overflow:hidden; float:none; }
+.tooltip .list li.last{ border-bottom:0px;}
+.tooltip .list .username{ width:220px; font-size:15px; color:#000; font-weight:bold;}
+.success{ color:#008000;}
+
+
+/*************Display add seller subscription table in admin registration seller*************/
+.packegname{ width:750px; padding:5px; overflow-y:auto; border:#CCC 1px solid}
+.packages tr td {font: 14px Arial, Helvetica, sans-serif; color:#5F5F5F; padding:3px}
+.radiobtn{ padding:4px 2px 3px 2px; border:1px dotted #000; background:#CCC; width:15px; height:15px	}
+
+/************* End Display add seller subscription table in admin*************/
+
+
+/*********************START Send SMS/EMAIL billing info & payment info table css**************************/
+.infobox{font:bold 14px Arial, Helvetica, sans-serif; color:#333; border:1px solid #e5e5e5; background-color:#f9f9f9; padding:7px 12px; margin-top:10px}
+.infobox2{font:14px Arial, Helvetica, sans-serif; color:#333; border:1px solid #e5e5e5; padding:12px 12px 7px 0; margin-top:5px}
+.billings_div{ width:378px; padding-left:10px}
+.billings_div2{ width:434px; padding-left:10px}
+.billings_div2 li{ margin-bottom:10px; overflow:hidden; font: 12px Arial, Helvetica, sans-serif; color:#333}
+
+.billings_div li{ margin-bottom:10px; overflow:hidden; font: 12px Arial, Helvetica, sans-serif; color:#333}
+.billings_div label{ font: 13px Arial, Helvetica, sans-serif; color:#5F5F5F; float:left; width:140px}
+
+.sel {border:1px solid #ccc; width:215px; padding:4px 7px; font-family:Arial, Helvetica, sans-serif; color:#5f5f5f; font-size:12px; float:left; background-color:#F3F3F3}
+.sel_textarea { border:1px solid #ccc; width:216px; height:69px;padding:4px 7px; font-family:Arial, Helvetica, sans-serif; color:#5f5f5f; font-size:12px; background-color:#F3F3F3}
+.sel_input { background:none; border:none; width:210px;  font-family:Arial, Helvetica, sans-serif; color:#5f5f5f; font-size:12px}
+.sel_input2 { background:none; border:none; width:210px;  font-family:Arial, Helvetica, sans-serif; color:#5f5f5f; font-size:12px; height:68px}
+.sel2 {border:1px solid #ccc; width:230px; padding:4px 7px; font-family:Arial, Helvetica, sans-serif; color:#5f5f5f; font-size:12px; float:left; background-color:#F3F3F3}
+.exp_date {border:1px solid #ccc; width:45px; padding:4px 7px; font-family:Arial, Helvetica, sans-serif; color:#5f5f5f; font-size:12px; float:left; background-color:#F3F3F3}
+.exp_date2 {border:1px solid #ccc; width:70px; padding:4px 7px; font-family:Arial, Helvetica, sans-serif; color:#5f5f5f; font-size:12px; float:left; background-color:#F3F3F3}
+.form_div{overflow:hidden; list-style:none; display:block; margin-bottom:0}
+label{ font: 15px Arial, Helvetica, sans-serif; color:#5F5F5F; float:left; width:150px}
+.expdatediv{width:70px; margin-right:20px;}
+/**********************END Send SMS/EMAIL billing info & payment info table css***************************/
+

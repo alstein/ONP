@@ -1,0 +1,12 @@
+body {margin:0; padding:0}
+.popupbg {background:url(images/popubg.png) repeat 0 0; position:fixed; height:100%; width:100%; z-index:+100;}
+.massagewrpper {width:600px; margin:10px auto; font:bold 14px Arial, Helvetica, sans-serif; color:#222222; position:relative;}
+.massagewrpper a {font:normal 14px Arial, Helvetica, sans-serif; text-decoration:none; color:#CC0000}
+.massagewrpper  p {margin:0; padding:2px}
+.massag_top {padding-left:15px; background:url(images/masgsprite.png) no-repeat 0 0}
+.massag_top div {background:url(images/masgsprite.png) no-repeat 100% -38px; height:13px}
+.massag_btm {padding-left:15px; background:url(images/masgsprite.png) no-repeat 0 -25px}
+.massag_btm div {background:url(images/masgsprite.png) no-repeat 100% -63px; height:13px}
+.massag_bg {border:solid #013d85; border-width:0 3px; background-color:#fff; padding:0 15px}
+.message_text{ width:940px; margin:10px auto; font:12px Arial, Helvetica, sans-serif; color:#222222; position:relative;}
+.message_text1{ width:940px; margin:10px auto; font:bold 14px Arial, Helvetica, sans-serif; color:#222222; position:relative;}

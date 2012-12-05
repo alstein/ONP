@@ -1,0 +1,20 @@
+[06-May-2012 03:39:59] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_e45d83f2b34cd3cfe4172135e09c8658, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[06-May-2012 08:39:59] PHP Warning:  Unknown: open(/tmp/sess_e45d83f2b34cd3cfe4172135e09c8658, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[06-May-2012 08:39:59] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[06-May-2012 03:40:12] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_e45d83f2b34cd3cfe4172135e09c8658, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[06-May-2012 08:40:12] PHP Warning:  Unknown: open(/tmp/sess_e45d83f2b34cd3cfe4172135e09c8658, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[06-May-2012 08:40:12] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[06-May-2012 03:42:40] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[06-May-2012 08:42:40] PHP Warning:  Unknown: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[06-May-2012 08:42:40] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[06-May-2012 03:46:17] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[06-May-2012 08:46:17] PHP Warning:  Unknown: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[06-May-2012 08:46:17] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[06-May-2012 03:46:39] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in /home/alsteinp/public_html/include.php on line 3
+[06-May-2012 08:46:39] PHP Warning:  Unknown: open(/tmp/sess_315ffec49c7da4c9af9a8ffec9cd19a1, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[06-May-2012 08:46:39] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[09-May-2012 03:34:13] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/alsteinp/public_html/modules/my-account/my_profile.php on line 40
+[09-May-2012 03:37:03] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/alsteinp/public_html/modules/my-account/my_profile.php on line 40
+[09-May-2012 07:05:07] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/alsteinp/public_html/modules/my-account/my_profile.php on line 40
+[09-May-2012 07:27:39] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/alsteinp/public_html/modules/my-account/my_profile.php on line 40
+[13-May-2012 10:34:00] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/alsteinp/public_html/modules/my-account/my_profile.php on line 40

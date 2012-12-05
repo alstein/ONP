@@ -1,0 +1,2 @@
+[16-Feb-2011 11:21:53] PHP Warning:  copy(../../../uploads/ad/1297855313banner.gif) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/groupbuy/public_html/includes/common.lib.php on line 66
+[16-Feb-2011 11:21:53] PHP Warning:  copy(../../../uploads/ad/1297855313banner.gif) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/groupbuy/public_html/includes/common.lib.php on line 66

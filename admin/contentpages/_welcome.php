@@ -1,0 +1,1 @@
+<? header("Location: page_list.php"); ?>

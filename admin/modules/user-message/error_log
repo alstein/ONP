@@ -1,0 +1,1 @@
+[26-Nov-2010 12:20:16] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/groupbuy/public_html/includes/DBTransact.php:51) in /home/groupbuy/public_html/admin/modules/user-message/user-message.php on line 39

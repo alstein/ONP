@@ -1,0 +1,1 @@
+<? header("Location: Manage_Users.php"); ?>

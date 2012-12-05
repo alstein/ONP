@@ -1,0 +1,28 @@
+code {
+	color: #c00;
+	font: 1.1em monospace;
+}
+.content ol.code {
+	margin: 0 0 3em;
+	padding: 6px 6px 6px 30px;
+	border: 2px solid #c00;
+	overflow: scroll;
+}
+.content ol.code li {
+	margin: 0 0 1px 12px;
+	padding: 0.5em;
+	color: #000;
+	font: 1.1em monospace;
+	background: #fff5f5;
+	list-style-type: decimal;
+	white-space: nowrap;
+}
+.content ol.code li.red, span.red {
+	color: #c00;
+}
+h3 code {
+	font: 0.9em monospace;
+}
+.indent {
+	text-indent: 25px;
+}

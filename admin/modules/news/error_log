@@ -1,0 +1,7 @@
+[08-Dec-2010 17:04:09] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/groupbuy/public_html/admin/modules/news/news-list.php on line 25
+[10-Dec-2010 14:23:50] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/groupbuy/public_html/admin/modules/news/news-list.php on line 25
+[13-Dec-2010 07:08:03] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/groupbuy/public_html/admin/modules/news/news-list.php on line 25
+[13-Dec-2010 07:10:14] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/groupbuy/public_html/admin/modules/news/news-list.php on line 25
+[13-Dec-2010 07:13:21] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/groupbuy/public_html/admin/modules/news/news-list.php on line 25
+[14-Dec-2010 09:17:35] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/groupbuy/public_html/admin/modules/news/news-list.php on line 25
+[15-Dec-2010 01:50:31] PHP Fatal error:  Smarty error: [in default/admin/modules/news/edit-news.tpl line 236]: syntax error: unclosed tag \{else} (opened line 86). (Smarty_Compiler.class.php, line 317) in /home/groupbuy/public_html/includes/libs/Smarty.class.php on line 1095

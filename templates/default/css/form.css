@@ -1,0 +1,33 @@
+input.styled { display: none; } 
+select.styled { position: relative; width: 190px; opacity: 0; filter: alpha(opacity=0); z-index: 5; } 
+.disabled { opacity: 0.5; filter: alpha(opacity=50); }
+			
+p { font:12px arial,sans-serif; padding-top:2px; }
+.third { width: 30%; float: left; }
+.clear { clear: both; }
+			
+.checkbox, .radio {
+	width: 10px;
+	height: 25px;
+	padding: 0 5px 0 0;
+	background: url(../images/checkbox.png) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+	cursor:pointer; 
+	
+	
+}
+.radio {
+	background: url(../images/radio.png) no-repeat;
+}
+.select-1 {
+	position: absolute;
+	width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 21px;
+	padding: 0 24px 0 8px;
+	color: #fff;
+	font: 12px/21px arial,sans-serif;
+	background: url(select.png) no-repeat;
+	overflow: hidden;
+}
