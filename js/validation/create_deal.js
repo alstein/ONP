@@ -207,6 +207,16 @@ jQuery.validator.addMethod("noZero", function(value, element) {
 				accept: "jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG"
 				
 			},
+			deal_photo1:{
+				required:true,
+				accept: "jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG"
+				
+			},
+			deal_photo2:{
+				required:true,
+				accept: "jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG"
+				
+			},
 			all:{
 			    fanonly:true 
 			},
@@ -244,6 +254,14 @@ jQuery.validator.addMethod("noZero", function(value, element) {
 				required: "Please select redeem to date."
 			},
 			deal_photo:{
+				required: "Please upload deal picture.",
+				 accept: "Please provide valid image format"
+			},
+			deal_photo1:{
+				required: "Please upload deal picture.",
+				 accept: "Please provide valid image format"
+			},
+			deal_photo2:{
 				required: "Please upload deal picture.",
 				 accept: "Please provide valid image format"
 			},
