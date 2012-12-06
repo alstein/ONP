@@ -259,7 +259,7 @@ function terminate_account(val)
                   </div>
                   <div class="clr"></div>
                 </li>
-				  <li>
+                  <li>
                   <label> Re-type New Password:<span>*</span></label>
                   <div class="fl form-textbox">
                      <input  type="password" maxlength="15" size="25" name="new_password" id="new_password" />
@@ -279,14 +279,14 @@ function terminate_account(val)
             <li>
                   <label>Grad College: </label>
                   <div class="fl form-textbox">
-                    <input name="" type="text" />
+                    <input name="grad_college" id="grad_college" value="{$user.grad_college}" type="text" />
                   </div>
                   <div class="clr"></div>
                 </li>
                 <li>
                   <label>Under Grad College :</label>
                   <div class="fl form-textbox">
-                  <input  name="college" type="text" id="college" value="{$user.grad_college}"   />
+                  <input  name="under_grad_college" type="text" id="under_grad_college" value="{$user.under_grad_college}"   />
                   </div>
                   <div class="clr"></div>
                 </li>

@@ -193,7 +193,7 @@ else
 	if($password!="")
 	{
 		$fl = array("first_name","last_name","fullname","address1",'password','email','usertypeid',"signup_date",'countryid','state_id','city', 'postalcode','status','contact_detail','gender','birthdate','rel_status','category_preferance','intrested_in','grad_college','	under_grad_college','movies','music','books','tv','activities','deal_by_email');
-		$vl = array($first_name,$last_name,$fullname,$address,md5($password),$email,2,date("Y-m-d H:i:s"),$countryid,$state,$cityid,$zipCode,"Active",$contactnumber,$gender,$birthday,$rel_status,$cat,$intrested_in,$college,$under_grad_college,$movies,$music,$books,$tv,$activities,$deal_thr_email);
+		$vl = array($first_name,$last_name,$fullname,$address,md5($password),$email,2,date("Y-m-d H:i:s"),$countryid,$state,$cityid,$zipCode,"Active",$contactnumber,$gender,$birthday,$rel_status,$cat,$intrested_in,$grad_college,$under_grad_college,$movies,$music,$books,$tv,$activities,$deal_thr_email);
 		$rs = $dbObj->cupdt('tbl_users',$fl,$vl,'userid',$_SESSION['csUserId'],'');
 		$update_flag=1;
 		if($gender=='Male')
@@ -214,7 +214,7 @@ else
 	}else
 	{
 		$fl = array("first_name","last_name","fullname","address1",'email','usertypeid',"signup_date",'countryid','state_id','city', 'postalcode','status','contact_detail','gender','birthdate','rel_status','category_preferance','intrested_in','grad_college','under_grad_college','movies','music','books','tv','activities','deal_by_email');
-		$vl = array($first_name,$last_name,$fullname,$address,$email,2,date("Y-m-d H:i:s"),$countryid,$state,$cityid,$zipCode,"Active",$contactnumber,$gender,$birthday,$rel_status,$cat,$intrested_in,$college,$under_grad_college,$movies,$music,$books,$tv,$activities,$deal_thr_email);
+		$vl = array($first_name,$last_name,$fullname,$address,$email,2,date("Y-m-d H:i:s"),$countryid,$state,$cityid,$zipCode,"Active",$contactnumber,$gender,$birthday,$rel_status,$cat,$intrested_in,$grad_college,$under_grad_college,$movies,$music,$books,$tv,$activities,$deal_thr_email);
 		$rs = $dbObj->cupdt('tbl_users',$fl,$vl,'userid',$_SESSION['csUserId'],'');
 		$update_flag=1;
 		if($gender=='Male')
