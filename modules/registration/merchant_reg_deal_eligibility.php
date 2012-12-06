@@ -7,12 +7,12 @@ if($_SESSION['merchantabout_business']=="")
     @header("Location:".SITEROOT."/registration/merchant_reg_profileinfo");
 }
 //echo "<pre>";print_r($_SESSION);echo "</pre>";
-if($_GET['id1']==skip)
+/*if($_GET['id1']==skip)
 {
     $contact_per=$_SESSION['merchantcontact_person'];
     $fname=$_SESSION['merchantfname'];
     $lname=$_SESSION['merchantlname'];
-    $memail=$_SESSION['merchantemail'];
+    $email=$_SESSION['merchantemail'];
     $password=md5($_SESSION['merchantpassword']);
     $business_name=$_SESSION['merchantbusiness_name'];
     $address1=$_SESSION['merchantaddress1'];
@@ -47,7 +47,7 @@ if($_GET['id1']==skip)
     $mail=$_SESSION['merchant_mail'];
 
     $fl = array("first_name","last_name","business_name","fullname","username",'password','email','usertypeid',"signup_date","address1","address2","address3","address4","address5","city",'state_id','countryid', "business_webURL","contact_detail",'status',"subscribe_status",'about_us','deal_cat','deal_subcat','specility','business_start_date1','business_end_date1','business_start_date2','business_end_date2','menu_price_file','photo',"contact_person","concat_address");
-    $vl = array($fname,$lname,$business_name,$fullname,$username,$password,$memail,3,$signup_date,$address1,$address2,$address3,$address4,$address5,$cityid,$state,$countryid,$website,$phone,"Active","Expired",$about_business,$maincategory,$subcategory,$speciality,$starthour,$endhour,$starthour1,$endhour1,$menuprice,$photo,$contact_per,$concat_address);
+    $vl = array($fname,$lname,$business_name,$fullname,$username,$password,$email,3,$signup_date,$address1,$address2,$address3,$address4,$address5,$cityid,$state,$countryid,$website,$phone,"Active","Expired",$about_business,$maincategory,$subcategory,$speciality,$starthour,$endhour,$starthour1,$endhour1,$menuprice,$photo,$contact_per,$concat_address);
 // 	print_r($vl);
 // 	exit;
     $resIns = $dbObj->cgi('tbl_users',$fl,$vl,'');
@@ -183,7 +183,7 @@ if($_GET['id1']==skip)
 	}
 
 	@header("Location:".SITEROOT."/success/success/");
-}
+}*/
 if(isset($_POST['Submit'])!="" )
 {
 
@@ -194,7 +194,7 @@ if($_POST['chk_agree']!="")
 	$contact_per=$_SESSION['merchantcontact_person'];
 	$fname=$_SESSION['merchantfname'];
 	$lname=$_SESSION['merchantlname'];
-	$email=$_SESSION['merchantemail'];
+	$memail=$_SESSION['merchantemail'];
 	$password=md5($_SESSION['merchantpassword']);
 	$business_name=$_SESSION['merchantbusiness_name'];
 	$address1=$_SESSION['merchantaddress1'];
@@ -231,7 +231,7 @@ if($_POST['chk_agree']!="")
 	$merchant_phone=$_SESSION['merchant_phone'];
 	$mail=$_SESSION['merchant_mail'];
 	$fl = array("first_name","last_name","business_name","fullname","username",'password','email','usertypeid',"signup_date","address1","address2","address3","address4","address5","city",'state_id','countryid', "business_webURL","contact_detail",'status',"subscribe_status",'about_us','deal_cat','deal_subcat','specility','business_start_date1','business_end_date1','business_start_date2','business_end_date2','menu_price_file','photo',"contact_person","concat_address");
-	$vl = array($fname,$lname,$business_name,$fullname,$username,$password,$email,3,$signup_date,$address1,$address2,$address3,$address4,$address5,$cityid,$state,$countryid,$website,$phone,"Active","Expired",$about_business,$maincategory,$subcategory,$speciality,$starthour,$endhour,$starthour1,$endhour1,$menuprice,$photo,$contact_per,$concat_address);
+	$vl = array($fname,$lname,$business_name,$fullname,$username,$password,$memail,3,$signup_date,$address1,$address2,$address3,$address4,$address5,$cityid,$state,$countryid,$website,$phone,"Active","Expired",$about_business,$maincategory,$subcategory,$speciality,$starthour,$endhour,$starthour1,$endhour1,$menuprice,$photo,$contact_per,$concat_address);
 // 	print_r($vl);
 // 	exit;
 	$resIns = $dbObj->cgi('tbl_users',$fl,$vl,'');
