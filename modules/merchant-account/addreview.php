@@ -13,7 +13,7 @@ $merchantid=$_GET['merchantid'];
         $resultuser_user=mysql_fetch_array($retress_use);
         $username=$resultuser_user['fullname'];
         $smarty->assign("merchant",$merchantname);
-        $smarty->assign("username",$username);
+        $smarty->assign("usernam",$username);
 	$sqlre="SELECT * FROM tbl_rating WHERE user_id=".$_SESSION['csUserId']." AND merchant_id=".$_GET['merchantid']." ";
 	$retres = $dbObj->customqry($sqlre, "");
 	$numrets=@mysql_num_rows($retres);
