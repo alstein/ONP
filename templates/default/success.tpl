@@ -16,7 +16,7 @@
 {/literal}
 <body>
 <div style="height:20px;"></div>
-<div align="center" style=" color: #656565;
+<div   align="center" style=" color: #656565;
     font: 14px Arial,Helvetica,sans-serif;
     margin-bottom: 10px;
     text-align: center;">Shared on OffersnPals. Share it on Facebook also ?</div>
