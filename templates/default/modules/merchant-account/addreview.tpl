@@ -106,7 +106,7 @@ function facebookpublish()
           if(my_string==true)
          {
                     FB.init({
-                    appId  : fbid,
+                    appId  : 468889599797776,
                     status : true, // check login status
                     cookie : true, // enable cookies to allow the server to access the session
                     xfbml  : true,
@@ -115,11 +115,12 @@ function facebookpublish()
 
                      var obj = {
                           method: 'feed',
-                          link: 'http://offersnpals.com/',
+                          link: 'https://developers.facebook.com/docs/reference/dialogs/',
                           picture: 'http://offersnpals.com/templates/default/images/logopdf.jpg',
                           name: 'Offersnpals',
                           caption: keyword,
-                          description: review
+                          description: review,
+						  redirect_uri:'https://www.offersnpals.com/'
                     };
 
                     function callback(response) {

@@ -5,15 +5,15 @@
 //include_once("../../includes/libs/plugins/function.getrating.php");
 $merchantid=$_GET['merchantid']; 
         $sqluser="SELECT * FROM tbl_users WHERE userid=".$merchantid;
-	$retress = $dbObj->customqry($sqluser);
+		$retress = $dbObj->customqry($sqluser);
         $resultuser=mysql_fetch_array($retress);
-        $merchantname=$resultuser['fullname'];
+		$merchantname=$resultuser['business_name'];
         $sqluser_use="SELECT * FROM tbl_users WHERE userid=".$_SESSION['csUserId'];
         $retress_use = $dbObj->customqry($sqluser_use);
         $resultuser_user=mysql_fetch_array($retress_use);
         $username=$resultuser_user['fullname'];
         $smarty->assign("merchant",$merchantname);
-        $smarty->assign("usernam",$username);
+        $smarty->assign("username",$username);
 	$sqlre="SELECT * FROM tbl_rating WHERE user_id=".$_SESSION['csUserId']." AND merchant_id=".$_GET['merchantid']." ";
 	$retres = $dbObj->customqry($sqlre, "");
 	$numrets=@mysql_num_rows($retres);
