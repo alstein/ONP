@@ -18,6 +18,6 @@
 	  name={$username} Shared An Offer On OffersnPals&
 	  caption={$discount}% Off On {$deal_title} Deal At {$business_name}&
 	  description=Login to OffersnPals to buy  such cool offers and share with friends.&
-	  redirect_uri=https://mighty-lowlands-6381.herokuapp.com/" target="_blank">Facebook Share</a>
+	  redirect_uri=http://testwww.offersnpals.com/" target="_blank">Facebook Share</a>
 	  </div>
   </body>
