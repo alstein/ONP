@@ -138,6 +138,7 @@ $smarty->assign("day",$edate1['2']);
 $smarty->assign("month",$edate1['1']);
 $smarty->assign("year",$edate1['0']);
 $smarty->assign("yousave",$row['original_price']-$row['offer_price']);
+$smarty->assign("currenttime", time());
 
 //payment setting
 

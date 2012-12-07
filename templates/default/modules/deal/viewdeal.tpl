@@ -1,10 +1,10 @@
 {include file=$header_start}
 {strip}
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript" src="{$sitejs}/jquery.timeago.js"></script>
 <!--<link href="{$siteroot}/templates/default/css/countdown.css" rel="stylesheet" type="text/css">-->
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 <link href="{$siteroot}/templates/default/css/popup.css" rel="stylesheet" type="text/css"/>
 
 {/strip}
@@ -432,7 +432,7 @@ $(document).ready(function(){
 
                   <p>Time Left:</p>
 
-                  <span><script language="javascript" src="{$siteroot}/timezone.php?timezone=America/Los_Angeles&countto={$date_to_pass}&id={$smarty.get.deal_id}&>&allowPrintSpan=1"></script></span> </div>
+                  <span><script language="javascript" src="{$siteroot}/timezone.php?timezone=Asia/Singapore&countto={$date_to_pass}&id={$smarty.get.deal_id}&allowPrintSpan=1&{$currenttime}"></script></span> </div>
 
                 <div class="clr"></div>
 
