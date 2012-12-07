@@ -13,7 +13,7 @@
 		margin-bottom: 10px;
 		text-align: center;"><a href="https://www.facebook.com/dialog/feed?
 	  app_id=468889599797776&
-	  link=https://developers.facebook.com/docs/reference/dialogs/&
+	  link=https://www.offersnpals.com/&
 	  picture=http://testwww.offersnpals.com/templates/default/images/offernpals_logo.png&
 	  name={$username} Shared An Offer On OffersnPals&
 	  caption={$discount}% Off On {$deal_title} Deal At {$business_name}&
