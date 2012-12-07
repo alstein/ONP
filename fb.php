@@ -29,8 +29,8 @@ if($fb){
 //  'appId'  => '179603878798564',			//227 server
 //   'secret' => 'b7be9d6b30025c00ca4df2381636d41b',	//227 server
 	
-      'appId'  => '271589349611901',
-      'secret' => '645603ae1a15626e30d52a9b6a8806a8',
+      'appId'  => '468889599797776',
+      'secret' => '2c3186a410eb846ede811ef86825b448',
       'cookie' => true,
 
 
