@@ -571,8 +571,7 @@ function share_comment1(obj,val,val1,id1,deal_id)
 {
 
 
-
- 		var module=document.getElementById("module").value;
+		var module=document.getElementById("module").value;
 
 // 		var d=document.getElementById("txt_id").value;
 
@@ -661,8 +660,8 @@ function share_comment1(obj,val,val1,id1,deal_id)
 
 
 					if(module=='dealsasusual' || module=='rightnowdeal'){
-                                                      
-					tb_show('Share Deal', SITEROOT+'/success.php?placeValuesBeforeTB_=savedValues&TB_iframe=true&height=100&width=600&modal=false',tb_pathToImage);
+                    // alert(obj+'<--->'+val+'<--->'+val1+'<--->'+id1+'<--->'+deal_id);                                 
+					tb_show('Share Deal', SITEROOT+'/success.php?val='+val+'&val1='+val1+'&id1='+id1+'&deal_id='+deal_id+'&placeValuesBeforeTB_=savedValues&TB_iframe=true&height=100&width=600&modal=false',tb_pathToImage);
                                                     
 					}
 
