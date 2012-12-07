@@ -115,7 +115,7 @@ function facebookpublish()
 
                      var obj = {
                           method: 'feed',
-                          link: 'https://developers.facebook.com/docs/reference/dialogs/',
+                          link: 'https://www.offersnpals.com/',
                           picture: 'http://offersnpals.com/templates/default/images/logopdf.jpg',
                           name: 'Offersnpals',
                           caption: keyword,
