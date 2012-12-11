@@ -12,13 +12,125 @@ if(!$_SESSION['duAdmId'])
     exit;
 }
 
+/**
+ * 
+ * Function to get Total Sales for each deal
+ * @param type $deal_id 
+ * 
+ */
+function getTotalSale($deal_id)
+{
+    global $dbObj;
+    //$dealid = "deal_id = " . $deal_id;
+    $dealid = $deal_id;
+    //echo "SELECT COUNT(*) as Sales FROM tbl_deal_payment WHERE deal_id = ".$dealid;
+    $res = $dbObj->customqry("SELECT COUNT(*) as Sales FROM tbl_deal_payment WHERE deal_id = ".$dealid);
+    //echo $sales = $dbObj->gj('tbl_deal_payment', "*" , $dealid, "", "","", "", "");
+    while($row = @mysql_fetch_assoc($res))
+    {
+        $sales = $row['Sales'];
+    }
+    
+    return $sales;
+}
+
+if(isset($_GET['view']) && $_GET['view'] == 'sales') {
+    date_default_timezone_set('Asia/Singapore');
+    include_once('../../../include.php');
+    include_once('../../../includes/SiteSetting.php');
+    include_once("../../../includes/paging.php");
+    include_once('../../../includes/class.message.php');
+    include_once('../../../includes/function.php');
+
+    // code for excel export
+    $out ="Deal Sales Report";
+    $out .="\n";
+    $out .="\n";
+    $out .='Deal Name, Buyer Name, Buyer Email, Time Of Buy, Qty';
+    $out .="\n";
+    $out .="\n";
+    $l="";
+
+    $date = date("Y-m-d H:i:s");
+
+    $res = $dbObj->customqry("SELECT p.*, u.fullname, u.email, d.deal_title FROM tbl_deal_payment as p LEFT JOIN tbl_deals as d ON p.deal_id=d.deal_unique_id LEFT JOIN tbl_users u ON p.user_id=u.userid WHERE p.deal_id = ".$_GET['exel_id']);
+
+    $i=0;
+    while($row = mysql_fetch_assoc($res))
+    {
+        $out .= '"'.$row['deal_title'].'","'.$row['fullname'].'","'.$row['email'].'","'.date(DATE_FORMAT." H:i:s",strtotime($row['buy_date'])).'","'.$row['deal_quantity'].'"';
+        $out .= "\n";
+        $i++;
+    }
+    
+    @header("Content-type: text/x-csv");
+    @header("Content-type: application/csv");
+    @header("Content-Disposition: attachment; filename=Deal_Sales.csv");
+    echo $out;
+    exit;    
+}
+
+if(isset($_GET['view']) && $_GET['view'] == 'excel') {
+    date_default_timezone_set('Asia/Singapore');
+    include_once('../../../include.php');
+    include_once('../../../includes/SiteSetting.php');
+    include_once("../../../includes/paging.php");
+    include_once('../../../includes/class.message.php');
+    include_once('../../../includes/function.php');
+
+    // code for excel export
+    $out ="Deal Report";		
+    $out .="\n";
+    $out .="\n";
+    $out .='Deal Name,Merchant Name,Deal End Date,Deal Category,Original Price,Discount In %,Offer Price, Total Bought';				
+    $out .="\n";
+    $out .="\n";
+    $l="";
+
+    $date = date("Y-m-d H:i:s");
+
+    //$tbl = "tbl_deal as p left Join tbl_users u on u.userid = p.seller_id";
+    $tbl = "tbl_deals as p, tbl_users as tu, tbl_dealtype dt ";
+    $sf = "p.*,tu.business_name,tu.deal_cat,md.category";
+
+    $cnd="p.deal_end_date >= '$date' ";
+    
+    //echo "SELECT ".$sf." FROM tbl_deals as p LEFT JOIN tbl_users as tu ON p.merchant_id=tu.userid left join mast_deal_category md on tu.deal_cat=md.id WHERE ".$cnd;
+    $res = $dbObj->customqry("SELECT ".$sf." FROM tbl_deals as p LEFT JOIN tbl_users as tu ON p.merchant_id=tu.userid left join mast_deal_category md on tu.deal_cat=md.id WHERE ".$cnd);
+ 
+    $i=0;
+    while($row = mysql_fetch_assoc($res))
+    {
+        $total_bought = getTotalSale($row['deal_unique_id']);
+        if($row['deal_category']=='deal_as_usual')
+        {
+            $deal_cat="Deal As Usual";
+        }
+        else
+        {
+            $deal_cat="Right Now Deal";
+        }
+        #---code for csv report-----#
+        $out .= '"'.$row['deal_title'].'","'.$row['business_name'].'","'.date(DATE_FORMAT." H:i:s",strtotime($row['deal_end_date'])).'","'.$deal_cat.'","'.$row['original_price'].'","'.$row['discount_in_per'].'%","'.$row['offer_price'].'","'.$total_bought.'"';
+        $out .= "\n";
+        #----code end---#
+        $i++;
+    }
+    
+    @header("Content-type: text/x-csv");
+    @header("Content-type: application/csv");
+    @header("Content-Disposition: attachment; filename=Deal-details.csv");
+    echo $out;
+    exit;    
+    
+}
 //**********************************Find All Seller***********************************************//
 $res_sellerDet = $dbObj->cgs("tbl_users","userid, fullname, first_name, last_name,business_name, email",array("isDeleted","usertypeid"),array(0,3),"first_name","ASC","");
 $num_seller = @mysql_num_rows($res_sellerDet);
 $row_sellerDet = array();
 while($row = @mysql_fetch_assoc($res_sellerDet))
 {
-	$row_sellerDet[] = $row;
+    $row_sellerDet[] = $row;
 }
 $smarty->assign("deal_from_seller_names",$row_sellerDet);
 //**********************************End Of Find All Seller***********************************************//
@@ -96,7 +208,7 @@ if(!(in_array("10", $arr_modules_permit)))
                                   where tdl.deal_id=".$dealid);
 //         $resultsetxls=mysql_fetch_array($res);
          
-         while($row = @mysql_fetch_assoc($res))
+        while($row = @mysql_fetch_assoc($res))
 	{
 		$feed[] = $row;
         }
@@ -133,16 +245,16 @@ if(!(in_array("10", $arr_modules_permit)))
    #-------- Show Testimonails -------------------#
    
 
-	if($_GET['view'] == 'excel')
-	{
-	$out ="Deal Report";		
-	$out .="\n";
-	$out .="\n";
-	$out .='Deal Name,Merchant Name,Deal End Date,Deal Category,Original Price,Discount In %,Offer Price';				
-	$out .="\n";
-	$out .="\n";
-	$l="";
-	}
+//	if($_GET['view'] == 'excel')
+//	{
+//	$out ="Deal Report";		
+//	$out .="\n";
+//	$out .="\n";
+//	$out .='Deal Name,Merchant Name,Deal End Date,Deal Category,Original Price,Discount In %,Offer Price';				
+//	$out .="\n";
+//	$out .="\n";
+//	$l="";
+//	}
 
 
 $ob="deal_unique_id"; $ot="DESC";	
@@ -211,7 +323,7 @@ if($_GET['sortby'])
     }
 }
 
-$date = date("Y-m-d H:i:s");	
+$date = date("Y-m-d H:i:s");
 
    //$tbl = "tbl_deal as p left Join tbl_users u on u.userid = p.seller_id";
    $tbl = "tbl_deals as p, tbl_users as tu, tbl_dealtype dt ";
@@ -247,34 +359,34 @@ if(isset($_GET['search']))
 }
 	
 // 	$res = $dbObj->gj($tbl,$sf,$cnd,"deal_unique_id","","DESC",$l, "");
-	if($_GET['view'] == 'excel')
-	{
-	$res = $dbObj->customqry("SELECT ".$sf." FROM tbl_deals as p LEFT JOIN tbl_users as tu ON p.merchant_id=tu.userid left join mast_deal_category md on tu.deal_cat=md.id WHERE ".$cnd." ORDER BY $ob $ot LIMIT ".$l, "");
-	}
-	else
-	{
-	$res = $dbObj->customqry("SELECT ".$sf." FROM tbl_deals as p LEFT JOIN tbl_users as tu ON p.merchant_id=tu.userid left join mast_deal_category md on tu.deal_cat=md.id WHERE ".$cnd." ORDER BY $ob $ot LIMIT ".$l, "");
-	}
+//	if($_GET['view'] == 'excel')
+//	{
+//            $res = $dbObj->customqry("SELECT ".$sf." FROM tbl_deals as p LEFT JOIN tbl_users as tu ON p.merchant_id=tu.userid left join mast_deal_category md on tu.deal_cat=md.id WHERE ".$cnd." ORDER BY $ob $ot LIMIT ".$l, "");
+//	}
+//	else
+//	{
+            $res = $dbObj->customqry("SELECT ".$sf." FROM tbl_deals as p LEFT JOIN tbl_users as tu ON p.merchant_id=tu.userid left join mast_deal_category md on tu.deal_cat=md.id WHERE ".$cnd." ORDER BY $ob $ot LIMIT ".$l, "");
+//	}
 	$i=0;
 	while($row = @mysql_fetch_assoc($res))
 	{
 		$feed[] = $row;
 		
-		if($_GET['view'] == 'excel')
-		{
-			if($row['deal_category']=='deal_as_usual')
-			{
-			$deal_cat="Deal As Usual";
-			}
-			else
-			{
-			$deal_cat="Right Now Deal";
-			}
-			#---code for csv report-----#
-			$out .= '"'.$row['deal_title'].'","'.$row['fullname'].'","'.date(DATE_FORMAT." H:i:s",strtotime($row['deal_end_date'])).'","'.$deal_cat.'","'.$row['original_price'].'","'.$row['discount_in_per'].'%","'.$row['offer_price'].'"';
-			$out .= "\n";
-			#----code end---#
-		}
+//		if($_GET['view'] == 'excel')
+//		{
+//			if($row['deal_category']=='deal_as_usual')
+//			{
+//                            $deal_cat="Deal As Usual";
+//                        }
+//			else
+//			{
+//                            $deal_cat="Right Now Deal";
+//            		}
+//			#---code for csv report-----#
+//			$out .= '"'.$row['deal_title'].'","'.$row['fullname'].'","'.date(DATE_FORMAT." H:i:s",strtotime($row['deal_end_date'])).'","'.$deal_cat.'","'.$row['original_price'].'","'.$row['discount_in_per'].'%","'.$row['offer_price'].'"';
+//			$out .= "\n";
+//			#----code end---#
+//		}
 		$sel_count_deal=$dbObj->customqry("select count(deal_id) as count_deal from tbl_deal_payment_unique where deal_id='".$row['deal_unique_id']."'","");
 		$res_count=@mysql_fetch_assoc($sel_count_deal);
 		$feed[$i]['count_deal']=$res_count['count_deal'];
@@ -320,14 +432,14 @@ if(isset($_GET['search']))
    #----------Success message=--------------#
 	
 	#----code for csv report-------#
-	if($_GET['view'] == 'excel')
-	{ 
-	@header("Content-type: text/x-csv");
-	@header("Content-type: application/csv");
-	@header("Content-Disposition: attachment; filename=Deal-details.csv");	
-	echo $out;
-	exit;
-	}
+//	if($_GET['view'] == 'excel')
+//	{ 
+//            @header("Content-type: text/x-csv");
+//            @header("Content-type: application/csv");
+//            @header("Content-Disposition: attachment; filename=Deal-details.csv");
+//            echo $out;
+//            exit;
+//	}
 	#----code end------#
    $smarty->display(TEMPLATEDIR.'/admin/globalsettings/deal/manage_deal.tpl'); 
 ?>

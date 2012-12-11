@@ -153,7 +153,7 @@ location.href=SITEROOT+"/admin/globalsettings/deal/manage_deal.php?xlsid="+id;
 					<!--<img src="{$siteroot}/templates/default/images/icons/application_edit.png" align="absmiddle" />&nbsp;<a href="{$siteroot}/admin/globalsettings/deal/edit_product.php?id={$deal[i].deal_unique_id}"><strong>Edit</strong></a>-->
 					<!--<strong>{if $deal[i].featured eq '0'}|<a href="{$siteroot}/admin/globalsettings/deal/manage_deal.php?id={$deal[i].deal_unique_id}&featured=set" style="text-decoration:none;">Set Featured</a>
 					{else}|<a href="{$siteroot}/admin/globalsettings/deal/manage_deal.php?id={$deal[i].deal_unique_id}&featured=unset" style="text-decoration:none;"> Unset Featured</a>{/if}
-					</strong>-->|<img align="top" src="{$siteroot}/templates/default/images/icons/excel.gif">&nbsp;<a href="{$siteroot}/admin/globalsettings/deal/manage_deal.php?view=excel&exel_id={$deal[i].deal_unique_id}"><strong>Deal Report</strong></a>
+					</strong>-->|<img align="top" src="{$siteroot}/templates/default/images/icons/excel.gif">&nbsp;<a href="{$siteroot}/admin/globalsettings/deal/manage_deal.php?view=sales&exel_id={$deal[i].deal_unique_id}"><strong>View Sales</strong></a>
 				</td>
 			</tr>
 			<tr>
