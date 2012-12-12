@@ -374,10 +374,10 @@ function validate()
         <!-- BUTTON -->
         <!-- GIVE YOU -->
         <div class="give-you-txt">
-            Gives You Ownership of <br /> 
-            Your Discount Shopping AND<br /> 
-            Helps You in Sharing Offers, Reviews<br /> 
-            and Experiences with Friends
+            Buy some really cool <br />
+            offers. Share offers, reviews and <br />
+            experiences with friends. <br />
+            True Social Shopping
             <br /> 
             <strong><a href="{$siteroot}/help/19/content/">Learn More</a></strong>
         </div>
@@ -402,8 +402,7 @@ function validate()
                 <div class="box-1-bg-wrap">
                     <div class="box-1-left">
                         <strong>Consumers</strong><br />
-                        Give offers to your favorite local 
-                        businesses.
+                        Enjoy some really awesome offers.
                     </div>
                     <div class="box-1-right">
                          <img src="{$siteroot}/templates/default/images/consumer-icon.png" />
