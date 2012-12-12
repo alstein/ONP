@@ -414,9 +414,9 @@ function validate()
             <div class="box-1-bg">
                 <div class="box-1-bg-wrap">
                     <div class="box-1-left">
-                        <strong>Community</strong><br />
+                        <strong>Social Shopping</strong><br />
                         Share offers,views &amp; experiences 
-                        with friends
+                        with friends.
                     </div>
                     <div class="box-1-right">
                          <img src="{$siteroot}/templates/default/images/community-icon.png" />
