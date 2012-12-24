@@ -934,8 +934,10 @@ $.get(SITEROOT+"/modules/my-account/ajax_my_review.php",{userid:id1,moduleid:mod
 <div class="live-wire">
   <h1>Live Wire</h1>
   <ul class="reset">
-	   <li><a href="javascript:void(0);"  onclick="javascript:viewRightNowDeal(this);" id="rightnowdeal" class="hurryup-deal-new"></a></li>
-    <li><a href="javascript:void(0);"  onclick="javascript:viewDealsAsUsual(this);" id="dealasusual"   class="fav-deal-new"></a></li>
+	   <!--<li><a href="javascript:void(0);"  onclick="javascript:viewRightNowDeal(this);" id="rightnowdeal" class="hurryup-deal-new"></a></li>
+    <li><a href="javascript:void(0);"  onclick="javascript:viewDealsAsUsual(this);" id="dealasusual"   class="fav-deal-new"></a></li>-->
+
+    <li><a href="javascript:void(0);"  onclick="javascript:viewRightNowDeal(this);" id="rightnowdeal" class="hurryup-deal-new"></a></li>
  
     <li><a href="javascript:void(0);"  onclick="javascript:viewFriends(this);" id="friend"  class="friends-deal"></a></li>
     <li><a href="javascript:void(0);"  onclick="javascript:viewFavLocalBusiness(this);" id="favbusiness"  class="local-deal"></a></li>

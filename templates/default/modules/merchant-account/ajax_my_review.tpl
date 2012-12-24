@@ -371,7 +371,7 @@ font-size:24px;
     <li>
       <div class="mer-offer-deal">
       <a href="{if $smarty.get.userid eq $smarty.session.csUserId} {$siteroot}/buy/{$deal[k].deal_unique_id}/ {else}javascript:void(0){/if}">
-      <div class="mer-offer-deal-lft fl"> <img src="{if $deal[k].deal_image eq '' }{$siteroot}/templates/default/images/no_image.jpg{else}{$siteroot}/uploads/deal/{$deal[k].deal_image}{/if}" title="" alt="" width="80" height="80" /><span class="now-img">&nbsp;</span> </div>
+      <div class="mer-offer-deal-lft fl"> <img src="{if $deal[k].deal_image eq '' }{$siteroot}/templates/default/images/no_image.jpg{else}{$siteroot}/uploads/deal/thumbnail/{$deal[k].deal_image}{/if}" title="" alt="" width="80" height="80" /><span class="now-img">&nbsp;</span> </div>
       </a>
       <div class="mer-offer-deal-rgt fr">
         <div>

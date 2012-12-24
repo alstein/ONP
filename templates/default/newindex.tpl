@@ -1,5 +1,4 @@
-{include file=$header_start}
-{include file=$profile_header2}
+{include file=$new_header}
 
 <!-- Header ends -->
 <!-- Maincontent starts -->

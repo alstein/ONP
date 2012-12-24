@@ -166,14 +166,14 @@ function viewDealsAsUsual_left(obj)
                           <div class="clr"></div>
                         </div>-->
                       </li>
-                      <li><a href="javascript:void(0);" onclick="javascript:viewDealsAsUsual_left(this);" id="dealasusual1" class="fl">My Fav Offers</a>
+                      <!--<li><a href="javascript:void(0);" onclick="javascript:viewDealsAsUsual_left(this);" id="dealasusual1" class="fl">My Fav Offers</a>-->
                       <!--  <div class="count fr">
                           <div class="count-lft fl">&nbsp;</div>
                           <div class="count-mid fl">+20</div>
                           <div class="count-rgt fl">&nbsp;</div>
                           <div class="clr"></div>
                         </div>-->
-                      </li>
+                      <!--</li>-->
                     </ul>
                   </div>
                 </li>

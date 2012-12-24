@@ -264,14 +264,14 @@ $('#div_share_photo').hide();
                               <div class="clr"></div>
                             </div>
                           </li>
-                          <li><a href="javascript:void(0);"   onclick="javascript:viewDealsAsUsual(this);"  class="fl">My Fav Offers</a>
+                          <!--<li><a href="javascript:void(0);"   onclick="javascript:viewDealsAsUsual(this);"  class="fl">My Fav Offers</a>
                             <div class="count fr">
                               <div class="count-lft fl">&nbsp;</div>
                               <div class="count-mid fl">+{if $daucnt gt 0}{$daucnt}{else}0{/if}</div>
                               <div class="count-rgt fl">&nbsp;</div>
                               <div class="clr"></div>
                             </div>
-                          </li>
+                          </li>-->
                           <li><a href="javascript:void(0);"  onclick="javascript:viewRightNowDeal(this);"  class="fl">“Hurry Up” Offers</a>
                             <div class="count fr">
                               <div class="count-lft fl">&nbsp;</div>
