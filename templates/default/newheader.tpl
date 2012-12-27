@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- Website title -->
@@ -24,6 +24,7 @@
 
 <link href="{$siteroot}/templates/default/css/basic.css" rel="stylesheet" type="text/css">
 <link href="{$siteroot}/templates/default/css/main.css" rel="stylesheet" type="text/css">
+<link href="{$siteroot}/templates/default/css/thickbox.css" rel="stylesheet" type="text/css" />
 <link href="{$siteroot}/templates/default/css/form.css" rel="stylesheet" type="text/css">
 <link href="{$siteroot}/templates/default/css/code.css" rel="stylesheet" type="text/css">
 <link href="{$siteroot}/templates/default/css/error_message.css" rel="stylesheet" type="text/css">
@@ -31,7 +32,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="{$siteroot}/favicon.ico" />
 
 {literal}
-<script type="text/javascript">
+<script language="JavaScript" type="text/javascript">
     document.createElement('div');
     document.createElement('aside'); document.createElement('figure'); document.createElement('footer'); document.createElement('header'); document.createElement('hgroup'); document.createElement('nav'); document.createElement('section'); document.createElement('figcaption'); 
 </script>
@@ -56,14 +57,185 @@
 {/literal}
 
 <script type="text/javascript" src="{$sitejs}/remote.js"></script>
-<script src="{$sitejs}/jquery-1.4.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="{$siteroot}/js/thick_js/thickbox.js"></script>
+<script type="text/javascript" src="{$sitejs}/jquery.js"></script>
 <script type="text/javascript" src="{$sitejs}/jquery.validate.pack.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="{$sitejs}/validation/validateCustomerSignup.js"></script>
 <script type="text/javascript" src="{$siteroot}/js/selectmenu.js"></script>
+<script type="text/javascript" src="{$sitejs}/validation/home_login.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script type="text/javascript" src="{$siteroot}/templates/default/css/test.htm"></script>
-</head>
+<script language="JavaScript" type="text/javascript">
+{literal}
+function isValidDate(value)
+{
+    try   
+    {
+		
+        //Change the below values to determine which format of date you wish to check. It is set to dd/mm/yyyy by default.
+        var DayIndex = 0;
+        var MonthIndex = 1;
+        var YearIndex = 2;
+ 
+        value = value.replace(/-/g, "/").replace(/\./g, "/"); 
+        var SplitValue = value.split("/");
+        var OK = true;
+        if (!(SplitValue[DayIndex].length == 1 || SplitValue[DayIndex].length == 2)) {
+            OK = false;
+        }
+        if (OK && !(SplitValue[MonthIndex].length == 1 || SplitValue[MonthIndex].length == 2)) {
+            OK = false;
+        }
+        if (OK && SplitValue[YearIndex].length != 4) {
+            OK = false;
+        }
+        if (OK) {
+            var Day = parseInt(SplitValue[DayIndex], 10);
+            var Month = parseInt(SplitValue[MonthIndex], 10);
+            var Year = parseInt(SplitValue[YearIndex], 10);
+            if (OK = ((Year > 1900) && (Year < new Date().getFullYear()))) {
+                if (OK = (Month <= 12 && Month > 0)) {
+                    var LeapYear = (((Year % 4) == 0) && ((Year % 100) != 0) || ((Year % 400) == 0));
+                    if (Month == 2) {
+                        OK = LeapYear ? Day <= 29 : Day <= 28;
+                    }
+                    else {
+                        if ((Month == 4) || (Month == 6) || (Month == 9) || (Month == 11)) {
+                            OK = (Day > 0 && Day <= 30);
+                        }
+                        else {
+                            OK = (Day > 0 && Day <= 31);
+                        }
+                    }
+                }
+            }
+        }
+        return OK;
+    }
+    catch (e) {
+        return false;
+    }
+}
+function validate()
+{
+	$("#frm").validate();
+	
+	if($("#frm").valid())
+	{
+            var name=document.getElementById("name").value;
+            var lname=document.getElementById("lname").value;
+            var email=document.getElementById("email").value;
+            //var reenter_email=document.getElementById("reenter_email").value;
+            var password=document.getElementById("password").value;
+            var sel_gender=document.getElementById("sel_gender").value;
+            var sel_dd=document.getElementById("sel_dd").value;
+            var sel_yy=document.getElementById("sel_yy").value;
 
+            date = $("#sel_dd").val() +"/"+$("#sel_mm").val()+"/"+$("#sel_yy").val(); 
+            var vdat = isValidDate(date);
+            if(vdat)
+            {
+				// $('#singup-box').css('margin-top','-96px');
+				 //$('#title_name').html('SECOND STEP!');
+				 $('#cateselect').css('width','400px');
+				 $('.joinus').css('width','366px');
+				 $('.joinus-row-1').css('width','374px');
+				 $('#singup_first').hide();
+				 
+				 $('#cate_select').show();
+				 
+               //$("#frm").submit();
+// 		window.location = SITEROOT+"/profileinfo/";
+            }
+            else
+            {
+                alert("Select proper birth date");
+		return false;
+            }
+	}
+        else
+	{
+          $("#frm").submit();
+	}
+}
+
+$(document).ready(function() {
+    $('a.login-window').click(function() {
+		
+        //Getting the variable's value from a link 
+        var loginBox = $(this).attr('href');
+
+        //Fade in the Popup
+        $(loginBox).fadeIn(300);
+
+        //Set the center alignment padding + border see css style
+        var popMargTop = ($(loginBox).height() + 24) / 2; 
+        var popMargLeft = ($(loginBox).width() + 24) / 2; 
+
+        $(loginBox).css({ 
+            'margin-top' : -popMargTop,
+            'margin-left' : -popMargLeft
+        });
+		
+        // Add the mask to body
+        $('body').append('<div id="mask"></div>');
+        $('#mask').fadeIn(300);
+		
+        return false;
+    });
+	
+    // When clicking on the button close or the mask layer the popup closed
+    $('a.close, #mask').live('click', function() { 
+        $('#mask , .login-popup').fadeOut(300 , function() {
+            $('#mask').remove();  
+        }); 
+        return false;
+    });
+});
+
+// SINGUP POPUPBOX
+$(document).ready(function() {
+    $('a.singup-window').click(function() {
+
+        //Getting the variable's value from a link 
+        var loginBox = $(this).attr('href');
+
+        //Fade in the Popup
+        $(loginBox).fadeIn(300);
+
+        //Set the center alignment padding + border see css style
+        var popMargTop = ($(loginBox).height() + 24) / 2; 
+        var popMargLeft = ($(loginBox).width() + 24) / 2; 
+
+        $(loginBox).css({ 
+            'margin-top' : -popMargTop,
+            'margin-left' : -popMargLeft
+        });
+
+        // Add the mask to body
+        $('body').append('<div id="mask"></div>');
+        $('#mask').fadeIn(300);
+
+        return false;
+    });
+
+    // When clicking on the button close or the mask layer the popup closed
+    $('a.close, #mask').live('click', function() { 
+        $('#mask , .singup-popup').fadeOut(300 , function() {
+            $('#mask').remove();  
+        }); 
+        return false;
+    });
+    $('a.close, #mask').live('click', function() { 
+        $('#mask , .cate-popup').fadeOut(300 , function() {
+            $('#mask').remove();  
+        }); 
+        return false;
+    });
+});
+{/literal}
+</script>
+</head>
 <!-- js disabled -->
 <div class="popupbg">
     <noscript>
@@ -111,6 +283,10 @@
         $("#cat_ref").val(category_id);
         document.frmh.submit();
     }
+    function category_view(category_id){
+        $("#cat_ref").val(category_id);
+        document.frmc.submit();
+    }
 </script>
 {/literal}
 </head>
@@ -120,11 +296,12 @@
     {php}//exit;{/php}
 {/if} 
 <body id="inner-head">
-<div style="position:fixed; background:#2e2f30; z-index:1; height:90px;border-bottom:1px solid #AFB9C5" class="fullwid">
+<div style="position:fixed; background:#2e2f30; z-index:999; height:45px;border-bottom:1px solid #AFB9C5" class="fullwid">
     <!-- main continer of the page -->
     <div id="header" {if $smarty.session.csUserTypeId eq '2'} style="width:1121px;" {/if}>
         <div>
             <h1 id="inner-page-logo" class="fl"><a href="{$siteroot}">&nbsp;</a></h1>
+            {if $smarty.session.csUserTypeId neq ''}
             {if $smarty.session.csUserTypeId eq '2'}
                 <form name="frm_search" id="frm_search" method="POST">
                     <div class="fl search-bar fl">
@@ -196,35 +373,51 @@
                     {/if}
                 </ul>
             </div>
-        </div>
-        <div class="clr"></div>
-        <div class="submenu">
-            <ul>
-                {foreach item=rootcat from=$categories}
-                <li>
-                    <a href="javascript:void(0);">{$rootcat.category}</a>
-                    <div class="dropdown">
-                        <div class="dropdwon-arrow"></div>
-                        <div class="dropdown-top"></div>
-                        <div class="dropdown-mid">
-                            <form name="frmh" id="frmh" action="{$siteroot}/merchant-account/view_search_merchant" method="POST">
-                            <dl class="reset">
-                                <input name="cat_ref[]" id="cat_ref" type="hidden">
-                                {foreach item=subcats from=$rootcat.subcats}
-                                <dt>
-                                <a href="javascript:void(0)" onclick="search_by_category({$subcats.id})">{$subcats.category}</a>
-                                </dt>
-                                {/foreach}
-                            </dl>
-                            </form>
-                            <div class="clr"></div>
-                        </div>
-                        <div class="dropdown-btm"></div>
+            {else}
+                {include file=$login}
+                {include file=$signup}
+                <!--<form name="frm_search" id="frm_search" method="POST">
+                    <div class="search-bar fl">
+                        <input type="text" name="txt_search" id="txt_search" value="Search Friends"  onBlur="if(this.value=='')this.value='Search Friends'" onFocus="if(this.value=='Search Friends')this.value=''" style="color:#FFFFFF" class="fl"/>
+                        <a href="javascript:void(0);" class="maginifier fl" onClick="search_text();"></a>
                     </div>
-                </li>
-                {/foreach}
-            </ul>
+                </form>-->
+                <div class="menu fr">
+                    <ul>
+                        <li><a href="#login-box" class="login-window"><strong>Login</strong></a></li>
+                    </ul>
+                </div>
+            {/if}
         </div>
+    </div>    
+    <div class="clr"></div>
+    <div id="subheader" class="submenu fr">
+        <form name="frmc" id="frmc" action="{$siteroot}/deal/category_view" method="POST">
+        <ul>
+            {foreach item=rootcat from=$categories}
+            <li>
+                <a href="javascript:void(0);" onclick="category_view({$rootcat.id})">{$rootcat.category}</a>
+                <!--<div class="dropdown">
+                    <div class="dropdwon-arrow"></div>
+                    <div class="dropdown-top"></div>
+                    <div class="dropdown-mid">
+                        <dl class="reset">
+                            <input name="cat_ref[]" id="cat_ref" type="hidden">
+                            {foreach item=subcats from=$rootcat.subcats}
+                            <dt>
+                            <a href="javascript:void(0)" onclick="category_view({$subcats.id})">{$subcats.category}</a>
+                            </dt>
+                            {/foreach}
+                        </dl>
+                        </form>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="dropdown-btm"></div>
+                </div>-->
+            </li>
+            {/foreach}
+        </ul>
+        </form>
     </div>
 </div>
 <div class="clr"></div>

@@ -4,7 +4,6 @@
 <!-- Maincontent starts -->
 <div id="maincont" class="ovfl-hidden">
     <div class="view-deals">
-        <h1>View All Offers</h1>
         <ul class="reset">
             {section name=i loop=$all_deals}
             <li>
@@ -30,7 +29,7 @@
                     </div>
                 </div>
             </li>
-            {sectionelse }
+            {sectionelse}
             <div align="center">No deal found.</div>
             {/section}
         </ul>

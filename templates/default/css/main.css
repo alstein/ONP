@@ -52,7 +52,7 @@ a { color:#666666; }
 
 .member-signin { display:block; font-size:16px; color:#FFFFFF;}
 .member-signin-title {color:#FFFFFF; text-align:center; font-size:12px;}
-.member-signin-title strong {color:#f9532c; text-align:center; text-transform:uppercase; font-size:24px; font-weight:normal;}
+.member-signin-title strong {color:#f9532c; text-align:center; text-transform:uppercase; font-size:24px; font-weight:normal;line-height: 30px;}
 
 .signin { display:block; font-size:12px; color:#FFFFFF; width:265px; margin:10px auto;}
 .row-1 { width:256px; margin-bottom:12px;}
@@ -1024,6 +1024,22 @@ font-size:15px; font-family:Arial, Helvetica, sans-serif;color:#fff; cursor:poin
     width: 138px;
 }
 
+#subheader {
+    width:100%; /*width:1121px;*/ 
+    height:45px;
+    background:#9e9a99;
+    position:fixed;
+    top:45px;
+}
+
+.submenu ul {
+    margin:0 auto;
+    position:relative;
+    width:1000px;
+    height:45px;
+    padding:10px 0px 0px 0px;
+    float:right;
+}
 .submenu ul li
 {
     float:left;
@@ -1036,16 +1052,15 @@ font-size:15px; font-family:Arial, Helvetica, sans-serif;color:#fff; cursor:poin
 }
 .submenu ul li a
 {
-    background: none repeat scroll 0 0 #333333;
+    background: none repeat scroll 0 0 #424345;
     color: #FFFFFF;
     display: block;
     height: 30px;
-    padding-left: 30px;
-    padding-right: 20px;
+    padding:11px 20px 0px 20px;
     position: relative;
     text-align: center;
     text-decoration: none;
-    font-size:11px
+    font-size:11px; 
 }
 .submenu ul li a span
 {
@@ -1073,3 +1088,4 @@ font-size:15px; font-family:Arial, Helvetica, sans-serif;color:#fff; cursor:poin
     background:url(../images/menu-arrow.png) no-repeat;
 }
 .submenu ul li:hover > .dropdown { display:block}
+
