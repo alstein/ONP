@@ -7,7 +7,7 @@ $smarty->assign("year",$year);
 
 $date = date("Y-m-d H:i:s");	
 
-$res = $dbObj->customqry("SELECT d.deal_unique_id,d.deal_title,d.offer_price,d.deal_image,d.deal_end_date,d.max_deal_no,d.discount_in_per,u.business_name,u.first_name,u.last_name FROM tbl_deals d,tbl_users u WHERE d.merchant_id=u.userid ORDER BY d.deal_end_date ASC");
+$res = $dbObj->customqry("SELECT d.deal_unique_id,d.deal_title,d.offer_price,d.deal_image,d.deal_end_date,d.max_deal_no,d.discount_in_per,u.business_name,u.first_name,u.last_name FROM tbl_deals d,tbl_users u WHERE d.merchant_id=u.userid ORDER BY d.deal_end_date ASC","");
 while ($row = mysql_fetch_array($res))
 {
     $all_deals[]=$row;
@@ -16,12 +16,12 @@ while ($row = mysql_fetch_array($res))
 $smarty->assign("all_deals",$all_deals);
 
 $categories = array();
-$res = $dbObj->customqry("SELECT id, category FROM mast_deal_category WHERE parent_id = 0 AND active = 1");
+$res = $dbObj->customqry("SELECT id, category FROM mast_deal_category WHERE parent_id = 0 AND active = 1","");
 while($rows = mysql_fetch_assoc($res))
 {
 //    $all_categories[$rows['id']][] = $rows['category'];
     $subcats = array();
-    $res1 = $dbObj->customqry("SELECT id, category FROM mast_deal_category WHERE parent_id = '".$rows['id']."' AND active = 1");
+    $res1 = $dbObj->customqry("SELECT id, category FROM mast_deal_category WHERE parent_id = '".$rows['id']."' AND active = 1","");
     while($rows1 = mysql_fetch_assoc($res1))
     {
         $subcats[] = $rows1; 
