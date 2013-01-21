@@ -1,10 +1,10 @@
 {include file=$header_start}
 {strip}
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>-->
 <script type="text/javascript" src="{$sitejs}/jquery.timeago.js"></script>
 <!--<link href="{$siteroot}/templates/default/css/countdown.css" rel="stylesheet" type="text/css">-->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
 <link href="{$siteroot}/templates/default/css/popup.css" rel="stylesheet" type="text/css"/>
 
 {/strip}
@@ -421,7 +421,6 @@ $(document).ready(function(){
               <p><abbr>&nbsp;</abbr><span>{$deal.discount_in_per}% OFF</span><abbr>&nbsp; On </abbr> {$deal.deal_title}</p>
 
             </div>
-
             <div class="buy-time">
 
               <div class="grey-box fl">
@@ -629,10 +628,10 @@ $(document).ready(function(){
 				<input type="hidden" name="currency_code" value="SGD" />
 				<input type="hidden" name="no_shipping" value="1" />
 				<input type="hidden" name="no_note" value="0" />
-				<input type="hidden" name="return" value="{$siteroot}my-account/my_profile_home?flagchk=1" />
+				<input type="hidden" name="return" value="{$siteroot}/my-account/my_profile_home?flagchk=1" />
 				<input type="hidden" name="notify_url" value="{$siteroot}/ipn.php?payment_amount={$admin_comm_amt}&payment_currency=SGD" />
 				<input type="hidden" name="rm" value="2" />					 
-				<input type="hidden" name="cancel_return" value="{$siteroot}my-account/my_profile_home" />
+				<input type="hidden" name="cancel_return" value="{$siteroot}/my-account/my_profile_home" />
 				<input type="hidden" name="sold" id="sold" value="{$deal_status}">
 
 			</form>

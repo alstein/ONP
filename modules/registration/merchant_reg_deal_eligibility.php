@@ -187,8 +187,8 @@ if($_SESSION['merchantabout_business']=="")
 if(isset($_POST['Submit'])!="" )
 {
 
-if($_POST['chk_agree']!="")
-{
+//if($_POST['chk_agree']!="")
+//{
 
 
 	$contact_per=$_SESSION['merchantcontact_person'];
@@ -290,10 +290,10 @@ if($_POST['chk_agree']!="")
 // 	echo "<br>message==".$email_message;
 	}
 
-	if($_SESSION['merchant_name_key']!="" && $_SESSION['merchant_phone']!="" && $_SESSION['merchant_mail']!="")
-	{
-	$insert_merchant_deal_request=$dbObj->customqry("insert into tbl_merchant_deal_request(name_of_key,phone_no,	mail,merchant_id,status)values('".$name_key."','".$merchant_phone."','".$mail."','".$resIns."','no') ","");
-	}
+	//if($_SESSION['merchant_name_key']!="" && $_SESSION['merchant_phone']!="" && $_SESSION['merchant_mail']!="")
+	//{
+	$insert_merchant_deal_request=$dbObj->customqry("insert into tbl_merchant_deal_request(name_of_key,phone_no,	mail,merchant_id,status)values('".$contact_per."','".$phone."','".$memail."','".$resIns."','no') ","");
+	//}
 		$verifycode=md5($resIns * 32767);
 	$rs=$dbObj->cupdt("tbl_users", "activationcode", $verifycode, "userid", $resIns, "");
 	$rs=$dbObj->cgs("tbl_users", "", "userid", $resIns, "", "", "");
@@ -370,12 +370,12 @@ if($_POST['chk_agree']!="")
 	}
 
 	@header("Location:".SITEROOT."/success/success/");
-}
+/*}
 else
 {
 $msg="Please Agree to Terms and Conditions to proceed";
 $smarty->assign("msg",$msg);
-}
+}*/
 }
 $smarty->display(TEMPLATEDIR.'/modules/registration/merchant_reg_deal_eligibility.tpl');
 

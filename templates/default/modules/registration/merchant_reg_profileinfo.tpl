@@ -1,6 +1,6 @@
 {include file=$header_start}
 {strip}
-    <script type="text/javascript" src="{$sitejs}/validation/merchant_profile_info.js"></script>
+    <script type="text/javascript" src="{$siteroot}/js/validation/merchant_profile_info.js"></script>
 {/strip}
 {literal}
 <script language="JavaScript">
@@ -77,7 +77,7 @@
 <script language="JavaScript">
     $(document).ready(function()
     {
-        $('#frmRegistration').submit(function(){
+        $('#frmMerchantRegistration').submit(function(){
             if ($('div.error').is(':visible'))
             {
             } 
@@ -110,8 +110,8 @@
 <div id="maincont" class="ovfl-hidden">
     <div class="creat-deal">
         <h1>Local Business Registration</h1>
-        <div class="profile-thumb1" >
-            <div class="profile-thumb1-lft fl tabs" >
+        <div class="profile-thumb1">
+            <div class="profile-thumb1-lft fl tabs">
                 <h1 style=" color: #FFFFFF;font-size: 18px;margin: 5px 0;">Step 1</h1>
                 <p style=" font: 13px Arial,Helvetica,sans-serif;text-align: center;color:#fff">Profile Info</p>
             </div>
@@ -119,14 +119,14 @@
                 <h1>Step 2</h1>
 		<p>Business Info</p>
             </div>
-            <div class="profile-thumb1-lft fl">
+            <!--<div class="profile-thumb1-lft fl">
                 <h1>Step 3</h1>
                 <p>Deal Eligibility</p>
-            </div>
+            </div>-->
             <div class="clr"></div>
         </div>
 
-        <form method="POST" name="frm" id="frmRegistration" action="">
+        <form method="POST" name="frmMerchantRegistration" id="frmMerchantRegistration" action="">
             <div class="registration-form1">
                 <ul class="reset deal-from">
                     <li>
@@ -151,7 +151,7 @@
                         <div class="clr"></div>
                     </li>
                     <li>
-                        <label>Business Name::</label>
+                        <label>Business Name:</label>
                         <div class="fl textbox">
                             <input name="business_name" id="business_name" type="text" />
                         </div>
@@ -165,7 +165,7 @@
                         <div class="clr"></div>
                     </li>
                     <li>
-                        <label style="width:171px">&nbsp;&nbsp;</label>
+                        <label style="width:205px">&nbsp;&nbsp;</label>
                         <div class="fl">
                             <input type="checkbox" name="chk_outlet" id="chk_outlet" value="yes" onclick="javascript:show_address();" />
                             We have multiple outlets
@@ -173,14 +173,14 @@
                         <div class="clr"></div>
                     </li>
                     <li>
-                        <label> Address 1(Street):</label>
+                        <label> Address Line 1(Street):</label>
                         <div class="fl textbox">
                             <input name="address1" id="address1" type="text" />
                         </div>
                         <div class="clr"></div>
                     </li>
                     <li>
-                        <label> Address 2(Building/Unit):</label>
+                        <label> Address Line 2(Building/Unit):</label>
                         <div class="fl textbox">
                             <input name="concat_address" id="concat_address" type="text" />
                         </div>

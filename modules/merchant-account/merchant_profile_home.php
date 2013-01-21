@@ -21,12 +21,9 @@ if($_SESSION['view_success_message']!=""){
 	$smarty->assign("view_success_message",$view_success_message);
 }
 
-
-
 if($_SESSION['alertpopup']!=""){
-	
-	$smarty->assign("alertpopup",$_SESSION['alertpopup']);
-	$_SESSION['alertpopup']="no";
+    $smarty->assign("alertpopup",$_SESSION['alertpopup']);
+    $_SESSION['alertpopup']="no";
 }
 
 

@@ -3,9 +3,9 @@
 include_once('../../include.php');
 include_once('../../includes/classes/class.deals.php');
 include_once('../../include/SiteSetting.php');
-if($_SESSION['csUserId']==""){
-	header("location:".SITEROOT);
-}
+//if($_SESSION['csUserId']==""){
+//	header("location:".SITEROOT);
+//}
 if(!empty($_POST['shippingaddress'])){ //cupdtii
     $shippingaddress=$_POST['shippingaddress'];  
     $addressspin=$_POST['add3']."  ".$_POST['pin'];

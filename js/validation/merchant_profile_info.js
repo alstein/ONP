@@ -38,15 +38,15 @@ jQuery.validator.addMethod("emailchk", function(value, element) {
 		return rege.test($('#email').val());
 },"Please enter valid email address");
 
-	$('#frm').validate({ 
+	$('#frmMerchantRegistration').validate({ 
 		    errorElement:'div',
 		    rules: {
-			email:{
+			email:{ 
 				
 				required: true,
 				email: true,
 				emailchk:true,
-				remote: "http://www.offersnpals.com/admin/user/ajax_check_whole_user.php"
+				remote: "http://testwww.offersnpals.com/admin/user/ajax_check_whole_user.php"
 			},
 			password:{
 				required: true,
@@ -104,7 +104,7 @@ jQuery.validator.addMethod("emailchk", function(value, element) {
 		    messages: {
 			email:{
 				required: "Please enter email address",
-				email: "Please enter ssscorrect email address",
+				email: "Please enter correct email address",
 				emailchk:"Please enter correct email address",
 				remote: "This email address is already in use"
 				

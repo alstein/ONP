@@ -3,7 +3,7 @@
 <script type="text/javascript" src="{$sitejs}/lightbox.js"></script>
 <link href="{$siteroot}/templates/default/css/lightbox.css" rel="stylesheet" type="text/css" />
 {/strip}
-{literal}
+<!--{literal}
 	<script type="text/javascript" language="JavaScript">
 	function check(){
 
@@ -17,7 +17,7 @@
 		}
 	}
 	</script>
-{/literal}
+{/literal}-->
 {include file=$header_end}
   <!-- Maincontent starts -->
 
@@ -70,23 +70,23 @@
 	{if $msg neq ''}<div class="error" style="margin-left:113px;">{$msg}</div><br>{/if}
       <div class="step-3-wrap">
 
-       <p class="design3-txt">.Yes, I would like to design and offer
-my own deals and receive incoming deals.</p>
+       <p class="design3-txt"><!--Yes, I would like to design and offer
+my own deals and receive incoming deals.-->By clicking SIGN UP or using OffersnPals, you are indicating that you have read, understood, and agree to Terms and Privacy Policy</p>
 
           
 
-          <div class="pre-btn fl" style=" margin:20px 0 0 50px">
+          <!--<div class="pre-btn fl" style=" margin:20px 0 0 50px">
 
 <input style="color: #FFFFFF;font: bold 15px/33px Arial,Helvetica,sans-serif;" class="previe-btn" type="button" name="apply" id="apply" value="Apply for Deal Eligibility" onclick="javascript:tb_show('Apply for Deal Eligibility', '{$siteroot}/modules/merchant-account/merchant_deal_request.php?sp=1&placeValuesBeforeTB_=savedValues&TB_iframe=true&height=330&width=517&modal=false', tb_pathToImage);"  value="Apply for Deal Eligibility ">
 
         
       </div>
 
-          <div class="clr"></div>
+          <div class="clr"></div>-->
 
           
 
-          <ul class="reset icn-link" style="padding:0px; margin:20px 0 10px 50px">
+<!--          <ul class="reset icn-link" style="padding:0px; margin:20px 0 10px 50px">
 
         <li><a href="javascript:void(0)" class="icn-link01 ">What's it?</a>
 
@@ -115,9 +115,9 @@ my own deals and receive incoming deals.</p>
 
         <p class="fl ters-txt">I have read and Agree to Term & Conditions</p>
 
-        <div class="clr"></div>
+        <div class="clr"></div>-->
 
-        <div class="pre-btn fl" style=" margin:20px 0 0 78px">
+        <div class="pre-btn fl" style=" margin:20px 0 0 90px">
 
 		<input class="previe-btn" type="submit" name="Submit" id="Submit" value="Save and Continue">
 

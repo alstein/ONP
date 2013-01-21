@@ -1,7 +1,7 @@
 {include file=$header_start}
 {strip}
 
-<!-- <script src="http://connect.facebook.net/en_US/all.js"></script> -->
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <link rel="stylesheet" href="{$siteroot}/lightbox1/css/screen.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="{$siteroot}/lightbox1/css/lightbox.css" type="text/css" media="screen" />
 <script type="text/javascript" src="{$sitejs}/jquery.timeago.js"></script>
@@ -16,58 +16,49 @@
     jQuery(document).ready(function()
     {
 
-// 		 jQuery("#txt_thinking1").keyup(function()
-//         {
-// 		//alert("in");
-// //                 var box=$(this).val();
-// // 		alert(e.keyCode);
-// //                if(e && e.keyCode == 13)
-// // 		{
-// // 		alert("ok");
-// // 		}
-//         });
-		var moduleid = '{/literal}{$smarty.get.id2}{literal}';
-	    jQuery('#show_thread').html("<img src='"+SITEROOT+"/templates/default/images/site/coming_soon/loadingAnimation.gif' alt='loading' />");
-		var txt_friend=$('#txt_friend').val();
-		if(txt_friend=='friend')
-		{
-			viewFriends();
-		}
-		else
-		{
-	
-// 			viewDealsAsUsual();
-viewRightNowDeal();
-		}
+        var moduleid = '{/literal}{$smarty.get.id2}{literal}';
+        jQuery('#show_thread').html("<img src='"+SITEROOT+"/templates/default/images/site/coming_soon/loadingAnimation.gif' alt='loading' />");
+        var txt_friend=$('#txt_friend').val();
+        if(txt_friend=='friend')
+        {
+                viewFriends();
+        }
+        else
+        {
 
-//        var facebook={/literal}'{$facebookshare}'{literal};
-//        if(facebook==1){
-//             FB.init({
-//                     appId  : '468889599797776',
-//                     status : true, // check login status
-//                     cookie : true, // enable cookies to allow the server to access the session
-//                     xfbml  : true,
-//                     oauth  : true // parse XFBML
-//                   });
-// 
-//                  var obj = {
-//                           method: 'feed',
-//                           link: 'http://offersnpals.com/',
-//                           picture: 'http://www.offersnpals.com/templates/default/images/logopdf.jpg',
-//                           name: 'Offersnpals',
-//                           caption: "Made a deal",
-//                           description: "I just bought an offer at offersnpals"  
-//                     };
-// 
-//                    function callback(response) {
-//                         if(response){
-//                          window.close();
-//                         }
-//                     }
-// 
-//                  FB.ui(obj, callback);
-//         }
-// 
+            //viewDealsAsUsual();
+            viewRightNowDeal();
+        }
+
+        var facebook={/literal}'{$facebookshare}'{literal};
+        if(facebook==1){
+             FB.init({
+                     appId  : '101047238433',
+                     status : true, // check login status
+                     cookie : true, // enable cookies to allow the server to access the session
+                     xfbml  : true,
+                     oauth  : true // parse XFBML
+                   });
+ 
+                  var obj = {
+                           method: 'feed',
+                           link: 'http://testwww.offersnpals.com/buy/{/literal}{$dealid}{literal}',
+                           picture: 'http://testwww.offersnpals.com/uploads/deal/thumbnail/{/literal}{$dealimage}{literal}',
+                           name: '{/literal}{$dealtitle}{literal}',
+                           //caption: "Made a deal",
+                           description: "I just bought an offer at offersnpals",
+                           redirect_uri: 'http://testwww.offersnpals.com/'
+                     };
+ 
+                    function callback(response) {
+                         if(response){
+                          window.close();
+                         }
+                     }
+ 
+                  FB.ui(obj, callback);
+         }
+         
 
     });
 

@@ -58,6 +58,24 @@ $.validator.addMethod("yearchk", function(value, element) {
     }, "You should be 18 years old."
 );
 
+jQuery.validator.addMethod("checkDuplicateEmail", function(value, element, params) {
+    var email = $("#email").val();
+   
+    var param = $.extend({ "type": "validate_email",  "email" : email}, param);
+    return eval($.ajax({
+        type: "GET",
+        url: "ajax_check_whole_user.php",
+        async: false,
+        data: param,
+        contentType: 'application/x-www-form-urlencoded; charset=iso-8859-1;',
+        cache: false,
+        dataType: "json",
+        success: function(data) { if(data=="false") { jQuery.validator.format("Email id is already in use"); } 
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { try { if (p.onError) p.onError(XMLHttpRequest, textStatus, errorThrown); } catch (e) { } }
+    }).responseText);
+}, "Email id is already in use");
+
 jQuery.validator.addMethod("email", function(value, element){
         if(value == '') 
             return true;
@@ -120,6 +138,7 @@ $(document).ready(function() {
             },
             email:{
                     required: true,
+					checkDuplicateEmail:true,
                     url_double_dot: true,
                     email: true
             },

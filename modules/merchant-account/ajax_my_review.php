@@ -147,9 +147,9 @@ function timediff($time1, $time2) {
 //**********************************************Find login person is  fan of consumer ******************//
 if($_SESSION['csUserTypeId']=='2')
 {
-$select_fan_ornot=$dbObj->customqry("select * from tbl_fan where userid='".$_GET['userid']."' and fan_id='".$_SESSION['csUserId']."'","");
-$count_fan_or_not=@mysql_num_rows($select_fan_ornot);
-$smarty->assign("count_fan_or_not",$count_fan_or_not);
+    $select_fan_ornot=$dbObj->customqry("select * from tbl_fan where userid='".$_GET['userid']."' and fan_id='".$_SESSION['csUserId']."'","");
+    $count_fan_or_not=@mysql_num_rows($select_fan_ornot);
+    $smarty->assign("count_fan_or_not",$count_fan_or_not);
 }
 //***********************************************End of Find login person is  fan of consumer*************************//
 if($_GET['userid']!="" )
@@ -484,7 +484,7 @@ elseif($_GET['moduleid']=='dealsasusual' || $_GET['moduleid']=='rightnowdeal')
 	{
 		$deal_type='right_now_deal';
 	}
-	$cnd="merchant_id='".$user."'and d.deal_category='".$deal_type."'";
+	$cnd="merchant_id='".$user."'";//and d.deal_category='".$deal_type."'";
 	
 
 	//$select_merchant = $dbObj->gj("tbl_users u left join tbl_deals d on u.userid=d.merchant_id ","u.business_name,u.usertypeid,u.userid,d.*", $cnd, "", "", "", $l, "");

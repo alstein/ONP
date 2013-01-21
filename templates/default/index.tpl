@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>OffersnPals</title>
 <link href="{$siteroot}/templates/default/css/main.css" rel="stylesheet" type="text/css" />
+<link href="{$siteroot}/templates/default/css/thickbox.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="{$siteroot}/favicon.ico" />
 <!-- FOR COMBO BOX -->
 <script type="text/javascript" src="{$siteroot}/js/jquery.js"></script>
@@ -62,6 +63,40 @@ function isValidDate(value)
         return false;
     }
 }
+
+$(document).ready(function() {
+	$('a.login-window').click(function() {
+		
+                //Getting the variable's value from a link 
+		var loginBox = $(this).attr('href');
+
+		//Fade in the Popup
+		$(loginBox).fadeIn(300);
+		
+		//Set the center alignment padding + border see css style
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		return false;
+	});
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .login-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+});
 
 function validate()
 {
@@ -138,11 +173,15 @@ function validate()
                 <div class="clr-bth" >&nbsp;</div>
                 <!-- MEMBER SIGNIN -->
                 <div class="member-signin">
-                    <div class="member-signin-title"> 
-                        Already a Member?<br />
-                        <strong>MEMBER SIGN IN</strong> 
+                    <!-- POPUP BOX -->
+						<div id="login-box" class="login-popup">
+        <a href="#" class="close"><img src="{$siteroot}/templates/default/images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+          <div class="signin">
+		  <div class="member-signin-title"> 
+                        
+                        <strong>MEMBER SIGN IN</strong>
+						
                     </div>
-                    <div class="signin">
                         <form name="frm1" id="frm1" method="POST">
                             <div class="row-1">
                                 <input type="hidden" name="siteroot" id="siteroot" value="{$siteroot}" />
@@ -214,6 +253,14 @@ function validate()
                         <!-- FACEBOOK -->
                         <div class="clr-bth"></div>
                     </div>
+</div>
+					<!-- POPUP BOX END-->
+					<div class="member-signin-title"> 
+                        Already a Member?<br />
+                        <a href="#login-box" class="login-window"><strong>MEMBER SIGN IN</strong></a> 
+						
+                    </div>
+                    
                 </div>
                 <!-- MEMBER SIGNIN -->
                 <!-- DIVIDER -->

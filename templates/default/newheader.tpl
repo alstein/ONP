@@ -58,6 +58,7 @@
 
 <script type="text/javascript" src="{$sitejs}/remote.js"></script>
 <script type="text/javascript" src="{$sitejs}/jquery.js"></script>
+<script type="text/javascript" src="{$sitejs}/jquery.validate.js"></script>
 <script type="text/javascript" src="{$sitejs}/jquery.validate.pack.js"></script>
 <script type="text/javascript" src="{$sitejs}/validation/validateCustomerSignup.js"></script>
 <script type="text/javascript" src="{$siteroot}/js/selectmenu.js"></script>
@@ -93,7 +94,7 @@ function isValidDate(value)
             var Day = parseInt(SplitValue[DayIndex], 10);
             var Month = parseInt(SplitValue[MonthIndex], 10);
             var Year = parseInt(SplitValue[YearIndex], 10);
-            if (OK = ((Year > 1900) && (Year < new Date().getFullYear()))) {
+            if (OK = ((Year >= 1900) && (Year < new Date().getFullYear()))) {
                 if (OK = (Month <= 12 && Month > 0)) {
                     var LeapYear = (((Year % 4) == 0) && ((Year % 100) != 0) || ((Year % 400) == 0));
                     if (Month == 2) {
@@ -135,14 +136,14 @@ function validate()
             var vdat = isValidDate(date);
             if(vdat)
             {
-				// $('#singup-box').css('margin-top','-96px');
-				 //$('#title_name').html('SECOND STEP!');
-				 $('#cateselect').css('width','400px');
-				 $('.joinus').css('width','366px');
-				 $('.joinus-row-1').css('width','374px');
-				 $('#singup_first').hide();
-				 
-				 $('#cate_select').show();
+                // $('#singup-box').css('margin-top','-96px');
+                 //$('#title_name').html('SECOND STEP!');
+                 $('#cateselect').css('width','400px');
+                 $('.joinus').css('width','366px');
+                 $('.joinus-row-1').css('width','374px');
+                 $('#singup_first').hide();
+
+                 $('#cate_select').show();
 				 
                //$("#frm").submit();
 // 		window.location = SITEROOT+"/profileinfo/";
@@ -284,7 +285,7 @@ $(document).ready(function() {
         document.frmh.submit();
     }
     function category_view(category_id){
-        $("#cat_ref").val(category_id);
+        $("#cat").val(category_id);
         document.frmc.submit();
     }
 </script>
@@ -296,7 +297,7 @@ $(document).ready(function() {
     {php}//exit;{/php}
 {/if} 
 <body id="inner-head">
-<div style="position:fixed; background:#2e2f30; z-index:999; height:45px;border-bottom:1px solid #AFB9C5" class="fullwid">
+<div style="position:fixed; background:#030303; z-index:999; height:45px;border-bottom:1px solid #AFB9C5" class="fullwid">
     <!-- main continer of the page -->
     <div id="header" {if $smarty.session.csUserTypeId eq '2'} style="width:1121px;" {/if}>
         <div>
@@ -384,7 +385,8 @@ $(document).ready(function() {
                 </form>-->
                 <div class="menu fr">
                     <ul>
-                        <li><a href="#login-box" class="login-window"><strong>Login</strong></a></li>
+                        <li><a href="#login-box" class="login-window" style="padding:4px 0px !important;background:transparent !important;"><img src="{$siteroot}/templates/default/images/login.png" /></a></li>
+                        <li><a href="{$siteroot}/registration/merchant_reg_profileinfo" style="padding:3px 0px !important;background:transparent !important;"><img src="{$siteroot}/templates/default/images/local-business-button.png" /></a></li>
                     </ul>
                 </div>
             {/if}
@@ -394,6 +396,7 @@ $(document).ready(function() {
     <div id="subheader" class="submenu fr">
         <form name="frmc" id="frmc" action="{$siteroot}/deal/category_view" method="POST">
         <ul>
+            <input name="cat" id="cat" type="hidden">
             {foreach item=rootcat from=$categories}
             <li>
                 <a href="javascript:void(0);" onclick="category_view({$rootcat.id})">{$rootcat.category}</a>

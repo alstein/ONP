@@ -282,8 +282,9 @@ function show_text1()
               <ul class="reset">
                  <li  ><a  href="javascript:void(0);"   onclick="javascript:viewReview(this);" id="review" class="review-deal"></a></li>
                 <li><a href="javascript:void(0);"  onclick="javascript:viewFriends(this);" id="friend" class="update-deal"></a></li>
-               <li><a href="javascript:void(0);"  onclick="javascript:viewRightNowDeal(this);" id="rightnowdeal" class="hurryup-deal-new"></a></li>
-               <li><a  href="javascript:void(0);"  onclick="javascript:viewDealsAsUsual(this);" id="dealasusual" class="fav-deal-new"></a></li>
+               <!--<li><a href="javascript:void(0);"  onclick="javascript:viewRightNowDeal(this);" id="rightnowdeal" class="hurryup-deal-new"></a></li>
+               <li><a  href="javascript:void(0);"  onclick="javascript:viewDealsAsUsual(this);" id="dealasusual" class="fav-deal-new"></a></li>-->
+                <li><a href="javascript:void(0);"  onclick="javascript:viewRightNowDeal(this);" id="rightnowdeal" class="hurryup-deal-new"></a></li>
               </ul>
               <div class="clr"></div>
 			<div>

@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -22,16 +22,14 @@
 <meta name="keywords" content="{$metakeyword}" />
 {/if}
 
-
 <link href="{$siteroot}/templates/default/css/basic.css" rel="stylesheet" type="text/css">
 <link href="{$siteroot}/templates/default/css/main.css" rel="stylesheet" type="text/css">
+<link href="{$siteroot}/templates/default/css/thickbox.css" rel="stylesheet" type="text/css" />
 <link href="{$siteroot}/templates/default/css/form.css" rel="stylesheet" type="text/css">
 <link href="{$siteroot}/templates/default/css/code.css" rel="stylesheet" type="text/css">
 <link href="{$siteroot}/templates/default/css/error_message.css" rel="stylesheet" type="text/css">
 <link href="{$siteroot}/templates/default/css/css-tooltips.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" type="image/x-icon" href="{$siteroot}/favicon.ico" />
-
-
 
 {literal}
 <script type="text/javascript">
@@ -62,25 +60,188 @@ document.createElement('aside'); document.createElement('figure'); document.crea
 {/literal}
 
 <script type="text/javascript" src="{$sitejs}/remote.js"></script>
-<script src="{$sitejs}/jquery-1.4.min.js" type="text/javascript" charset="utf-8"></script>
-<!--<link rel="StyleSheet" href="{$sitejs}/facebox/facebox.css" type="text/css"/>
-<script type="text/javascript" src="{$sitejs}/facebox/facebox.js"></script>-->
-
-
-
-<script type="text/javascript" src="{$siteroot}/js/thick_js/thickbox.js"></script>
+<script type="text/javascript" src="{$sitejs}/jquery.js"></script>
+<script type="text/javascript" src="{$sitejs}/jquery.validate.js"></script>
 <script type="text/javascript" src="{$sitejs}/jquery.validate.pack.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="{$sitejs}/validation/validateCustomerSignup.js"></script>
 <script type="text/javascript" src="{$siteroot}/js/selectmenu.js"></script>
+<script type="text/javascript" src="{$sitejs}/validation/home_login.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script type="text/javascript" src="{$siteroot}/templates/default/css/test.htm"></script>
+<script language="JavaScript" type="text/javascript">
+{literal}
+function isValidDate(value)
+{
+    try   
+    {
+		
+        //Change the below values to determine which format of date you wish to check. It is set to dd/mm/yyyy by default.
+        var DayIndex = 0;
+        var MonthIndex = 1;
+        var YearIndex = 2;
+ 
+        value = value.replace(/-/g, "/").replace(/\./g, "/"); 
+        var SplitValue = value.split("/");
+        var OK = true;
+        if (!(SplitValue[DayIndex].length == 1 || SplitValue[DayIndex].length == 2)) {
+            OK = false;
+        }
+        if (OK && !(SplitValue[MonthIndex].length == 1 || SplitValue[MonthIndex].length == 2)) {
+            OK = false;
+        }
+        if (OK && SplitValue[YearIndex].length != 4) {
+            OK = false;
+        }
+        if (OK) {
+            var Day = parseInt(SplitValue[DayIndex], 10);
+            var Month = parseInt(SplitValue[MonthIndex], 10);
+            var Year = parseInt(SplitValue[YearIndex], 10);
+            if (OK = ((Year >= 1900) && (Year < new Date().getFullYear()))) {
+                if (OK = (Month <= 12 && Month > 0)) {
+                    var LeapYear = (((Year % 4) == 0) && ((Year % 100) != 0) || ((Year % 400) == 0));
+                    if (Month == 2) {
+                        OK = LeapYear ? Day <= 29 : Day <= 28;
+                    }
+                    else {
+                        if ((Month == 4) || (Month == 6) || (Month == 9) || (Month == 11)) {
+                            OK = (Day > 0 && Day <= 30);
+                        }
+                        else {
+                            OK = (Day > 0 && Day <= 31);
+                        }
+                    }
+                }
+            }
+        }
+        return OK;
+    }
+    catch (e) {
+        return false;
+    }
+}
+function validate()
+{
+	$("#frm").validate();
+	
+	if($("#frm").valid())
+	{
+            var name=document.getElementById("name").value;
+            var lname=document.getElementById("lname").value;
+            var email=document.getElementById("email").value;
+            //var reenter_email=document.getElementById("reenter_email").value;
+            var password=document.getElementById("password").value;
+            var sel_gender=document.getElementById("sel_gender").value;
+            var sel_dd=document.getElementById("sel_dd").value;
+            var sel_yy=document.getElementById("sel_yy").value;
 
+            date = $("#sel_dd").val() +"/"+$("#sel_mm").val()+"/"+$("#sel_yy").val(); 
+            var vdat = isValidDate(date);
+            if(vdat)
+            {
+                // $('#singup-box').css('margin-top','-96px');
+                 //$('#title_name').html('SECOND STEP!');
+                 $('#cateselect').css('width','400px');
+                 $('.joinus').css('width','366px');
+                 $('.joinus-row-1').css('width','374px');
+                 $('#singup_first').hide();
 
+                 $('#cate_select').show();
+				 
+               //$("#frm").submit();
+// 		window.location = SITEROOT+"/profileinfo/";
+            }
+            else
+            {
+                alert("Select proper birth date");
+		return false;
+            }
+	}
+        else
+	{
+          $("#frm").submit();
+	}
+}
+
+$(document).ready(function() {
+    $('a.login-window').click(function() {
+		
+        //Getting the variable's value from a link 
+        var loginBox = $(this).attr('href');
+
+        //Fade in the Popup
+        $(loginBox).fadeIn(300);
+
+        //Set the center alignment padding + border see css style
+        var popMargTop = ($(loginBox).height() + 24) / 2; 
+        var popMargLeft = ($(loginBox).width() + 24) / 2; 
+
+        $(loginBox).css({ 
+            'margin-top' : -popMargTop,
+            'margin-left' : -popMargLeft
+        });
+		
+        // Add the mask to body
+        $('body').append('<div id="mask"></div>');
+        $('#mask').fadeIn(300);
+		
+        return false;
+    });
+	
+    // When clicking on the button close or the mask layer the popup closed
+    $('a.close, #mask').live('click', function() { 
+        $('#mask , .login-popup').fadeOut(300 , function() {
+            $('#mask').remove();  
+        }); 
+        return false;
+    });
+});
+
+// SINGUP POPUPBOX
+$(document).ready(function() {
+    $('a.singup-window').click(function() {
+
+        //Getting the variable's value from a link 
+        var loginBox = $(this).attr('href');
+
+        //Fade in the Popup
+        $(loginBox).fadeIn(300);
+
+        //Set the center alignment padding + border see css style
+        var popMargTop = ($(loginBox).height() + 24) / 2; 
+        var popMargLeft = ($(loginBox).width() + 24) / 2; 
+
+        $(loginBox).css({ 
+            'margin-top' : -popMargTop,
+            'margin-left' : -popMargLeft
+        });
+
+        // Add the mask to body
+        $('body').append('<div id="mask"></div>');
+        $('#mask').fadeIn(300);
+
+        return false;
+    });
+
+    // When clicking on the button close or the mask layer the popup closed
+    $('a.close, #mask').live('click', function() { 
+        $('#mask , .singup-popup').fadeOut(300 , function() {
+            $('#mask').remove();  
+        }); 
+        return false;
+    });
+    $('a.close, #mask').live('click', function() { 
+        $('#mask , .cate-popup').fadeOut(300 , function() {
+            $('#mask').remove();  
+        }); 
+        return false;
+    });
+});
+{/literal}
+</script>
 </head>
-
-
 <!-- js disabled -->
-
- <div class="popupbg">
+<div class="popupbg">
   <noscript>
   <link rel="StyleSheet" href="{$siteroot}/disablejs/jserror.css" type="text/css" media="screen" />
   <div class="massagewrpper">

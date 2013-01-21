@@ -77,14 +77,14 @@ function state_value(){
     <h1 style=" color: #FFFFFF;font-size: 18px;margin: 5px 0;">Step 2</h1>
     <p style=" font: 13px Arial,Helvetica,sans-serif;text-align: center;color:#fff">Business Info</p>
   </div>
-  <div class="profile-thumb1-lft fl">
+  <!--<div class="profile-thumb1-lft fl">
     <h1>Step 3</h1>
     <p>Deal Eligibility</p>
-  </div>
+  </div>-->
   <div class="clr"></div>
 </div>
 <form method="POST" name="frm" id="frm" action="">
-  <div class="registration-form" style="width:584px">
+  <div class="registration-form" style="width:624px">
     <ul class="reset deal-from">
       <li>
         <label>About Our Business:</label>
@@ -272,10 +272,13 @@ function state_value(){
         </li>
       </div>
       <li>
+        <p class="fl ters-txt">By clicking SIGN UP or using OffersnPals, you are indicating that you have read, understood, and agree to <a href="{$siteroot}/terms" target="_blank">Terms and Privacy Policy</a></p> 
+      </li>
+      <li>
         <label>&nbsp;</label>
-        <!--  <div class="pre-btn fl" style="margin:0 0 30px 30px">-->
-        <input type="submit" name="Submit" id="Submit" value="Save and Continue"  class="previe-btn" style="width:170px"/>
-        <!--  </div>-->
+        <div class="pre-btn fl" style="margin:0 0 30px 30px">
+            <input type="submit" name="Submit" id="Submit" value="Signup"  class="previe-btn" style="width:130px"/>
+        </div>
       </li>
     </ul>
   </div>

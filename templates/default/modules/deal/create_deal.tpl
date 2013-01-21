@@ -27,11 +27,11 @@ function getPercentage(orgPrice)
 
 function show_percentage(val)
 {
-alert(val);
-if(val>100)
-{
-alert("please enter % less than 100");
-}
+    alert(val);
+    if(val>100)
+    {
+        alert("please enter % less than 100");
+    }
 }
 
 
@@ -44,7 +44,7 @@ alert("please enter % less than 100");
   <!-- Maincontent starts -->
 	<form name="frm" id="frm" method="POST" enctype="multipart/form-data">
   <div id="maincont">
-    <div class="creat-deal">
+    <div class="create-deal">
       <h1>Create Your Own Offer</h1>
       <div class="deal-head">
         <h2>For Your Customers</h2>
@@ -52,33 +52,32 @@ alert("please enter % less than 100");
       <div class="deal-own-form">
         <div class="deal-own-form-top">
 	
-          <ul class="reset deal-from">
-            <li>
-              <label>Category:</label>
-              <div class="category-bg  fl">
-				  <select name="category" id="category" style="width:178px;" class="select">
-                    <option value="">Select your category</option>
-                    <option value="deal_as_usual" {if $smarty.session.deal_category eq 'deal_as_usual'} selected="selected"{/if}>My Fav Offers</option>
-                    <option value="right_now_deal" {if $smarty.session.deal_category eq 'right_now_deal'} selected="selected"{/if}>Hurry Up Offers</option>
-                  </select>
-               
-              </div>
-                 <div class="clr"></div>
-               <div class="fr" style="margin-right: 405px;margin-top: -28px;">
-            <ul class="reset icn-link" style="padding:0px">
-        <li><a href="javascript:void(0);" class="icn-link01 ">What's it?</a>
-        <div class="tooltip">
-        <span class="arrow">&nbsp;</span>
-        <div class="top01"><div></div></div>
-       <div class="mid" style="padding-bottom:5px">For offers with urgent redemption, consider choosing Hurry Up Offers.</div>
-       <div class="bot01"><div></div></div>
-        </div>
-        </li>
-        
-        </ul>
-</div>
-				<div class="error" htmlfor="category" generated="true" style="margin-left: 172px;"></div>
-            </li>
+          <ul class="reset deal-form">
+            <!--<li>
+                <label>Category:</label>
+                <div class="category-bg  fl">
+                    <select name="category" id="category" style="width:178px;" class="select">
+                        <option value="">Select your category</option>
+                        <option value="deal_as_usual" {if $smarty.session.deal_category eq 'deal_as_usual'} selected="selected"{/if}>My Fav Offers</option>
+                        <option value="right_now_deal" {if $smarty.session.deal_category eq 'right_now_deal'} selected="selected"{/if}>Hurry Up Offers</option>
+                    </select>
+               </div>
+                <div class="clr"></div>
+                <div class="fr" style="margin-right: 405px;margin-top: -28px;">
+                    <ul class="reset icn-link" style="padding:0px">
+                        <li>
+                            <a href="javascript:void(0);" class="icn-link01 ">What's it?</a>
+                            <div class="tooltip">
+                                <span class="arrow">&nbsp;</span>
+                                <div class="top01"><div></div></div>
+                                <div class="mid" style="padding-bottom:5px">For offers with urgent redemption, consider choosing Hurry Up Offers.</div>
+                                <div class="bot01"><div></div></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="error" htmlfor="category" generated="true" style="margin-left: 172px;"></div>
+            </li>-->
             <li>
               <label>Deal Headline:</label>
               <div class="fl deal-textbox">
@@ -153,7 +152,7 @@ on the offer deal.</div>
         </div>
         <div class="deal-own-form-mid">
           <h3>Why Buy:</h3>
-          <ul class="reset deal-from">
+          <ul class="reset deal-form">
             <li>
               <label>1</label>
               <div class="fl buy-textbox">
@@ -193,7 +192,7 @@ on the offer deal.</div>
         </div>
         <div class="deal-own-form-mid">
          <form id="checkbox">
-          <ul class="reset deal-from">
+          <ul class="reset deal-form">
             <li>
               <label>Maximum numbers 
                 that can be bought:</label>

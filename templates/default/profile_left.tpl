@@ -1,212 +1,196 @@
- {literal}
+{literal}
 <script language="JavaScript" type="text/javascript">
 function redirect_to_livewire(module)
 {
-// alert("ok");
-// var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
-// window.location=SITEROOT+"/my-account/"+d+"/"+module+"/my_profile_home";
+    // alert("ok");
+    // var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
+    // window.location=SITEROOT+"/my-account/"+d+"/"+module+"/my_profile_home";
 }
 </script>
 {/literal}
 {literal}
 <script type="text/javascript">
 $(document).ready(function(){
-	//alert("aa");
-	//alert($("#sesfriend").val());
-	 var sesfriend={/literal}{$smarty.session.friend}{literal};
-	 var sesdealsasusual={/literal}{$smarty.session.dealsasusual}{literal};
-	 var sesrightnowdeal={/literal}{$smarty.session.rightnowdeal}{literal};
-	 var sesfavlocalbusiness={/literal}{$smarty.session.favlocalbusiness}{literal};			
-	//alert(sesfriend);
-		if(sesfriend=="1")
-			$("#fdcnt").hide();
-		if(sesdealsasusual=="1")
-			$("#daucnt").hide();
-		if(sesrightnowdeal=="1")
-			$("#rndcnt").hide();
-		if(sesfavlocalbusiness=="1")
-			$("#fbcnt").hide();
-
+    //alert("aa");
+    //alert($("#sesfriend").val());
+     var sesfriend={/literal}{$smarty.session.friend}{literal};
+     var sesdealsasusual={/literal}{$smarty.session.dealsasusual}{literal};
+     var sesrightnowdeal={/literal}{$smarty.session.rightnowdeal}{literal};
+     var sesfavlocalbusiness={/literal}{$smarty.session.favlocalbusiness}{literal};			
+    //alert(sesfriend);
+    if(sesfriend=="1")
+        $("#fdcnt").hide();
+    if(sesdealsasusual=="1")
+        $("#daucnt").hide();
+    if(sesrightnowdeal=="1")
+        $("#rndcnt").hide();
+    if(sesfavlocalbusiness=="1")
+        $("#fbcnt").hide();
 });
 
 
-	function viewFavLocalBusiness(obj)
-	{
-		$("#fbcnt").html("");
+function viewFavLocalBusiness(obj)
+{
+    $("#fbcnt").html("");
+    var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
+    cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
 		
-		var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
-	    	cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
-		
-	    	jQuery.get(cmt_url,{userid:d,moduleid:'favlocalbusiness'},function(data)
-		{  
-			jQuery(".profile-middel").html(data);
-			$('#div_share').hide();
-			$('#dealasusual').removeClass("active");
-			$('#rightnowdeal').removeClass("active");
-			$('#friend').removeClass("active");
-			$('#favbusiness').addClass("active"); 
-		});
-	}
+    jQuery.get(cmt_url,{userid:d,moduleid:'favlocalbusiness'},function(data)
+    {  
+        jQuery(".profile-middel").html(data);
+        $('#div_share').hide();
+        $('#dealasusual').removeClass("active");
+        $('#rightnowdeal').removeClass("active");
+        $('#friend').removeClass("active");
+        $('#favbusiness').addClass("active"); 
+    });
+}
 	
-	function viewFriends(obj)
-	{
-		//$("#fdcnt").html("");
-		var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
-	    	cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
+function viewFriends(obj)
+{
+    //$("#fdcnt").html("");
+    var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
+    cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
 		
-	    	jQuery.get(cmt_url,{userid:d,moduleid:'friend'},function(data)
-		{   
-			jQuery(".profile-middel").html("");	
-			//jQuery("#show_thread").html(data);
-			jQuery(".profile-middel").html(data);
-			$('#div_share').show();
-			$('#dealasusual').removeClass("active");
-			$('#rightnowdeal').removeClass("active");
-			$('#friend').addClass("active");
-			$('#favbusiness').removeClass("active"); 
-		});
-	}  
+    jQuery.get(cmt_url,{userid:d,moduleid:'friend'},function(data)
+    {   
+        jQuery(".profile-middel").html("");	
+        //jQuery("#show_thread").html(data);
+        jQuery(".profile-middel").html(data);
+        $('#div_share').show();
+        $('#dealasusual').removeClass("active");
+        $('#rightnowdeal').removeClass("active");
+        $('#friend').addClass("active");
+        $('#favbusiness').removeClass("active"); 
+    });
+}  
 function viewDealsAsUsual(obj)
-	{
-		$("#daucnt").html("");	
-		var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
-	    	cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
+{
+    $("#daucnt").html("");	
+    var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
+    cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
 		
-	    	jQuery.get(cmt_url,{userid:d,moduleid:'dealsasusual'},function(data)
-		{
-			jQuery(".profile-middel").html(data);
-			$('#div_share').hide();
-			$('#dealasusual').addClass("active");
-			$('#rightnowdeal').removeClass("active");
-			$('#friend').removeClass("active");
-			$('#favbusiness').removeClass("active"); 
-		});
-	}
+    jQuery.get(cmt_url,{userid:d,moduleid:'dealsasusual'},function(data)
+    {
+        jQuery(".profile-middel").html(data);
+        $('#div_share').hide();
+        $('#dealasusual').addClass("active");
+        $('#rightnowdeal').removeClass("active");
+        $('#friend').removeClass("active");
+        $('#favbusiness').removeClass("active"); 
+    });
+}
 	
-	function viewRightNowDeal(obj)
-	{
-		$("#rndcnt").html("");
-		var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
-	    	cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
+function viewRightNowDeal(obj)
+{
+    $("#rndcnt").html("");
+    var d='{/literal}{if $smarty.get.id1 eq ''}{ $smarty.session.csUserId }{else}{ $smarty.get.id1 }{/if}{literal}';
+    cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
 		
-	    	jQuery.get(cmt_url,{userid:d,moduleid:'rightnowdeal'},function(data)
-		{
-
-			jQuery(".profile-middel").html(data);
-			$('#div_share').hide();
-			$('#dealasusual').removeClass("active");
-			$('#rightnowdeal').addClass("active");
-			$('#friend').removeClass("active");
-			$('#favbusiness').removeClass("active"); 
-		});
-	}  
+    jQuery.get(cmt_url,{userid:d,moduleid:'rightnowdeal'},function(data)
+    {
+        jQuery(".profile-middel").html(data);
+        $('#div_share').hide();
+        $('#dealasusual').removeClass("active");
+        $('#rightnowdeal').addClass("active");
+        $('#friend').removeClass("active");
+        $('#favbusiness').removeClass("active"); 
+    });
+}  
 function onfriend_page(userid)
 {
+    // 	var txt_thinking=$('#txt_thinking').val();
+    var txt_thinking=$.trim($('#txt_thinking').val());
+    var txt_link=$.trim($('#txt_link').val());
+    if(txt_thinking=='What you have been thinking?'){
+        txt_thinking='';
+    }
+    var photo=$('#commentphoto').val();
+    var newfilename=$('#new_filename').val();
 
-// 	var txt_thinking=$('#txt_thinking').val();
-	var txt_thinking=$.trim($('#txt_thinking').val());
-	var txt_link=$.trim($('#txt_link').val());
-		if(txt_thinking=='What you have been thinking?'){
-		txt_thinking='';
-		}
-	var photo=$('#commentphoto').val();
-	var newfilename=$('#new_filename').val();
-
-		if(txt_thinking)
-		{	$("#share").removeAttr("onClick");
-			if(photo==undefined)
-			{
-				
-				cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
-				jQuery.get(cmt_url,{userid:userid,txt_thinking:txt_thinking,moduleid:'friend'},function(data)
-				{
-					
-					$.get(cmt_url,{userid:userid,moduleid:'friend'},function(data)
-					{
-						
-						$(".profile-middel").html(data);
-						$('#div_share').show();
-						$('#friend').addClass("active");
-						$("#txt_thinking").val("");
-					});
-				})
-			}
-			else
-			{
-				cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
-				jQuery.get(cmt_url,{userid:userid,txt_thinking:txt_thinking,photo:photo,moduleid:'friend'},function(data)
-				{
-		
-					$.get(SITEROOT+"/modules/my-account/ajax_my_review.php",{userid:userid,moduleid:'friend'},function(data)
-					{
-						$('#div_share_photo').hide();
-						$('#div_share').show();
-						$(".profile-middel").html(data);
-						$('#friend').addClass("active");
-						$("#txt_thinking").val("");
-						$("#filename").val("");
-		
-					});
-				})
-			}
-		}
-		else if(txt_link)
-		{
-			if(photo==undefined)
-			{
-				
-				cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
-				jQuery.get(cmt_url,{userid:userid,txt_link:txt_link,moduleid:'friend'},function(data)
-				{
-					
-					$.get(cmt_url,{userid:userid,moduleid:'friend'},function(data)
-					{
-						
-						$(".profile-middel").html(data);
-						$('#div_share').show();
-						$('#friend').addClass("active");
-						$("#txt_thinking").val("");
-					});
-				})
-			}
-			else
-			{
-				cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
-				jQuery.get(cmt_url,{userid:userid,txt_link:txt_link,photo:photo,moduleid:'friend'},function(data)
-				{
-		
-					$.get(SITEROOT+"/modules/my-account/ajax_my_review.php",{userid:userid,moduleid:'friend'},function(data)
-					{
-						$('#div_share_photo').hide();
-						$('#div_share').show();
-						$(".profile-middel").html(data);
-						$('#friend').addClass("active");
-						$("#txt_thinking").val("");
-						$("#filename").val("");
-		
-					});
-				})
-			}
-		}
-	
-		else{ alert("Plese enter comment !");}
+    if(txt_thinking)
+    {	
+        $("#share").removeAttr("onClick");
+        if(photo==undefined)
+        {
+            cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
+            jQuery.get(cmt_url,{userid:userid,txt_thinking:txt_thinking,moduleid:'friend'},function(data)
+            {
+                $.get(cmt_url,{userid:userid,moduleid:'friend'},function(data)
+                {
+                    $(".profile-middel").html(data);
+                    $('#div_share').show();
+                    $('#friend').addClass("active");
+                    $("#txt_thinking").val("");
+                });
+            })
+        }
+        else
+        {
+            cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
+            jQuery.get(cmt_url,{userid:userid,txt_thinking:txt_thinking,photo:photo,moduleid:'friend'},function(data)
+            {
+                $.get(SITEROOT+"/modules/my-account/ajax_my_review.php",{userid:userid,moduleid:'friend'},function(data)
+                {
+                    $('#div_share_photo').hide();
+                    $('#div_share').show();
+                    $(".profile-middel").html(data);
+                    $('#friend').addClass("active");
+                    $("#txt_thinking").val("");
+                    $("#filename").val("");
+                });
+            })
+        }
+    }
+    else if(txt_link)
+    {
+        if(photo==undefined)
+        {
+            cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
+            jQuery.get(cmt_url,{userid:userid,txt_link:txt_link,moduleid:'friend'},function(data)
+            {
+                $.get(cmt_url,{userid:userid,moduleid:'friend'},function(data)
+                {
+                    $(".profile-middel").html(data);
+                    $('#div_share').show();
+                    $('#friend').addClass("active");
+                    $("#txt_thinking").val("");
+                });
+            })
+        }
+        else
+        {
+            cmt_url = SITEROOT+"/modules/my-account/ajax_my_review.php";
+            jQuery.get(cmt_url,{userid:userid,txt_link:txt_link,photo:photo,moduleid:'friend'},function(data)
+            {
+                $.get(SITEROOT+"/modules/my-account/ajax_my_review.php",{userid:userid,moduleid:'friend'},function(data)
+                {
+                    $('#div_share_photo').hide();
+                    $('#div_share').show();
+                    $(".profile-middel").html(data);
+                    $('#friend').addClass("active");
+                    $("#txt_thinking").val("");
+                    $("#filename").val("");
+                });
+            })
+        }
+    }
+    else{ alert("Plese enter comment !");}
 }
 function add_photo()
 {
-$('#div_share_photo').show();
+    $('#div_share_photo').show();
 }
 function add_text()
 {
-$('#div_share_photo').hide();
+    $('#div_share_photo').hide();
 }
 function add_link()
 {
-
-$('#txt_thinking').hide();
-$('#txt_link').show();
-$('#div_share_photo').hide();
+    $('#txt_thinking').hide();
+    $('#txt_link').show();
+    $('#div_share_photo').hide();
 }
-
 </script>
 {/literal}
 <td width="208" valign="top"><div class="maincont-inner-lft fl">

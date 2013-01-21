@@ -192,6 +192,7 @@ ul#globalNav li.home-icon:hover {background:url(../images/icon-sprite.png) no-re
 .profile-tbl{margin:20px 0 0 0;}
 .profile-tbl td { border-right:1px solid #cccccc}
 .maincont-inner-lft { width:208px}
+.user-pic {margin-top:50px;}
 .user-pic-lft  { width:100px}
 .user-pic-img  { width:100px; height:100px; margin-right:13px}
 .user-pic-rgt { width:82px; margin:10px 10px 0 10px}
@@ -600,7 +601,7 @@ ul#globalNav li.home-icon:hover {background:url(../images/icon-sprite.png) no-re
 }
 .menu ul li a:hover
 {
-	background:#000000;
+	background:#2a2a2a;
 }
 .menu ul li a:hover .arrow
 {
@@ -1027,32 +1028,28 @@ font-size:15px; font-family:Arial, Helvetica, sans-serif;color:#fff; cursor:poin
 #subheader {
     width:100%; /*width:1121px;*/ 
     height:45px;
-    background:#9e9a99;
+    background:#2a2a2a;
     position:fixed;
     top:45px;
 }
 
 .submenu ul {
-    margin:0 auto;
     position:relative;
     width:1000px;
     height:45px;
-    padding:10px 0px 0px 0px;
-    float:right;
+    padding:0px;
+    margin:0 auto;
 }
 .submenu ul li
 {
-    float:left;
+    float:right;
     height:30px;
     list-style-type:none;
-    margin-left:1px;
-    position:relative;
-    margin-top:-18px;
-    padding-top: 10px;
+    padding-left:1px;
 }
-.submenu ul li a
+.submenu ul a
 {
-    background: none repeat scroll 0 0 #424345;
+    background: none repeat scroll 0 0 #2a2a2a;
     color: #FFFFFF;
     display: block;
     height: 30px;
@@ -1061,8 +1058,9 @@ font-size:15px; font-family:Arial, Helvetica, sans-serif;color:#fff; cursor:poin
     text-align: center;
     text-decoration: none;
     font-size:11px; 
+    text-transform:uppercase;
 }
-.submenu ul li a span
+.submenu ul a span
 {
     height:32px;
     width:32px;
@@ -1071,17 +1069,16 @@ font-size:15px; font-family:Arial, Helvetica, sans-serif;color:#fff; cursor:poin
     top: 6px;
     background:url(sprite.png) no-repeat;
 }
-.submenu ul li a abbr
+.submenu ul a abbr
 {
     height: 5px;
     position: absolute;
     right: 6px;
-    top: 18px;
     width: 10px;
 }
-.submenu ul li a:hover
+.submenu ul a:hover
 {
-    background:#000000;
+    background:#424345;
 }
 .submenu ul li a:hover .arrow
 {
@@ -1089,3 +1086,8 @@ font-size:15px; font-family:Arial, Helvetica, sans-serif;color:#fff; cursor:poin
 }
 .submenu ul li:hover > .dropdown { display:block}
 
+.login-window {
+    background:#f9532c !important;
+    font-size:14px !important;
+    padding:10px 20px 0px 20px !important;
+}
