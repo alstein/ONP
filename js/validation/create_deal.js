@@ -151,7 +151,7 @@ jQuery.validator.addMethod("noZero", function(value, element) {
 		
 },"% should be less than 100.");
 
-	$('#frm').validate({
+	$('#frmCreateDeal').validate({
 		    errorElement:'div',
 		    rules: {
 			category:{

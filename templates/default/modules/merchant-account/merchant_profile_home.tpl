@@ -254,11 +254,11 @@ function show_text1()
 </script>
 {/literal}
 
+<!-- Header starts -->
+{include file=$profile_header2}
+<!-- Header ends -->
 <!-- main continer of the page -->
 <div id="wrapper">
-  <!-- Header starts -->
-    {include file=$profile_header2}
-  <!-- Header ends -->
   <!-- Maincontent starts -->
 
 

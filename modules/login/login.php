@@ -1,5 +1,4 @@
 <?php
-
 $PATH_PREFIX = "../";
 include_once('../../include.php');
 

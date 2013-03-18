@@ -7,7 +7,7 @@ $smarty->assign("year",$year);
 
 $date = date("Y-m-d H:i:s");	
 
-$res = $dbObj->customqry("SELECT d.deal_unique_id,d.deal_title,d.offer_price,d.deal_image,d.deal_end_date,d.max_deal_no,d.discount_in_per,u.business_name,u.first_name,u.last_name FROM tbl_deals d,tbl_users u WHERE d.merchant_id=u.userid ORDER BY d.deal_end_date ASC","");
+$res = $dbObj->customqry("SELECT d.deal_unique_id,d.deal_title,d.offer_price,d.deal_image,d.deal_end_date,d.max_deal_no,d.discount_in_per,u.business_name,u.first_name,u.last_name FROM tbl_deals d,tbl_users u WHERE d.merchant_id=u.userid ORDER BY d.posted_date DESC","");
 while ($row = mysql_fetch_array($res))
 {
     $all_deals[]=$row;

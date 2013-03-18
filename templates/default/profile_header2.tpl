@@ -25,7 +25,7 @@
 
     <div style="position:fixed; background:#2e2f30; z-index:1; height:43px;border-bottom:1px solid #AFB9C5" class="fullwid">
     <!-- main continer of the page -->
-    <div id="header" {if $smarty.session.csUserTypeId eq '2'} style="width:1121px;height:45px !important;" {/if}>
+    <div id="header" {if $smarty.session.csUserTypeId eq '2'} style="width:1121px;height:45px !important;" {else} style="height:45px !important;" {/if}>
         <div>
           <h1 id="inner-page-logo" class="fl"><a href="{$siteroot}">&nbsp;</a></h1>
             {if $smarty.session.csUserTypeId eq '2'}

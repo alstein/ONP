@@ -88,7 +88,8 @@ if(isset($_POST['Submit']))
     }
 
     $_SESSION['merchant_id']=$_SESSION['csUserId'];
-    $_SESSION['deal_category']=$category;
+    //$_SESSION['deal_category']=$category;
+    $_SESSION['deal_category']='right_now_deal';
     $_SESSION['deal_title']=$deal_name;
     $_SESSION['original_price']=$originalprice;
     $_SESSION['discount_in_per']=$sel_off;

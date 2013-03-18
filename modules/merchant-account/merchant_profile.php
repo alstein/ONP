@@ -3,9 +3,8 @@ include_once('../../include.php');
 
 if(!isset($_SESSION['csUserId']))
 {
-	header("location:".SITEROOT); exit;
+    header("location:".SITEROOT); exit;
 }
-
 
 $row_meta=$dbObj->getseodetails(1);
 $smarty->assign("row_meta",$row_meta);
@@ -15,11 +14,11 @@ $smarty->assign("whose_profile",$whose_profile);
 
 if($_GET['id1']!="")
 {
-$user=$_GET['id1'];
+    $user=$_GET['id1'];
 }
 else
 {
-$user=$_SESSION['csUserId'];
+    $user=$_SESSION['csUserId'];
 }
 $select_user_profile=$dbObj->customqry("select u.* from tbl_users  u  where u.userid='".$user."'","");
 $res_select_profile=@mysql_fetch_assoc($select_user_profile);

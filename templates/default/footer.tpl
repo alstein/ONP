@@ -6,7 +6,13 @@
     <ul class="reset">
     <li style=" background:none"><a href="{$siteroot}/help/19/content/">Help</a></li>
     <li><a href="{$siteroot}/blog" target="_blank">Blog</a></li>
-    <li><a href="{$siteroot}/faq/faq-consumer/">FAQ</a></li>
+    <li>
+        {if $smarty.session.csUserTypeId eq '3'}
+        <a href="{$siteroot}/faq/faq-merchant/">FAQ</a>
+        {else}
+        <a href="{$siteroot}/faq/faq-consumer/">FAQ</a>
+        {/if}
+    </li>
     <li><a href="{$siteroot}/privacy-policy">Privacy</a></li>
     <li><a href="{$siteroot}/terms">Terms</a></li>
     <li><a href=" https://www.twitter.com/OffersnPals"  target="_blank"><img src="{$siteroot}/templates/default/images/tw.png" /></a></li>
@@ -15,7 +21,7 @@
     
     
     <div class="copy fr"> <span class="copytxt">Talk to Us? Here you go:<b> <a href="mailto:we_listen@alsteincorp.com" style="color:#F9532C;font-style:normal;">we_listen@alsteincorp.com</a></b></span>
-      <p class="copytxt">© 2012 Alstein Pte Ltd. All Rights Reserved.</p>
+      <p class="copytxt">© 2013 Alstein Pte Ltd. All Rights Reserved.</p>
     </div>
   </div>
 </div>

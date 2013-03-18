@@ -54,7 +54,7 @@ function remove_menu(){
               <ul class="reset user-navigation-new">
                 
                 <li style="border:none">
-				{if $user.menu_price_file neq ''}<a class="photo-icon fl" href="{$siteroot}/uploads/menu_price_list/{$user.menu_price_file}">{else}<a  class="photo-icon fl" href="javascript:void(0);" onclick="alert('Menu Price List is Not Available  Please upload a document through Edit Profile.');">{/if}Menu/ Price List{if $user.menu_price_file neq '' && $smarty.get.id1 eq ""}<a href="javascript:void(0)" onclick="javascript:remove_menu();"> <abbr  class="remove-icon"></abbr></a>{/if}</a> </li>
+				{if $user.menu_price_file neq ''}<a class="photo-icon fl" href="{$siteroot}/uploads/menu_price_list/{$user.menu_price_file}">{else}<a  class="photo-icon fl" href="javascript:void(0);" onclick="alert('Menu Price List is Not Available.');">{/if}Menu/ Price List{if $user.menu_price_file neq '' && $smarty.get.id1 eq ""}<a href="javascript:void(0)" onclick="javascript:remove_menu();"> <abbr  class="remove-icon"></abbr></a>{/if}</a> </li>
 
 
                 <li><a href="{$siteroot}/photos/{$username.username}/albumphotos" class="photos-icon ">Photos</a></li>

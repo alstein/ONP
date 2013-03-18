@@ -4,8 +4,8 @@
 			{if $whose_profile eq 'Consumer'  ||  $whose_profile eq 'view_friend' || $whose_profile eq 'view_searches'}
 			{if $whose_profile neq 'view_searches' }
 			{if $smarty.session.csUserTypeId eq 2}
-				{if  $count_friend neq '0' && $res_friend.verification eq 'pending'}
-					{if $smarty.get.id1 eq ''}
+				{if  $count_friend neq '0' && $friend_acc.verification eq 'pending'}
+					{if $smarty.get.id1 neq ''}
             <div>
 				<input type="button" name="" id="" style="font-size: 12px;" value="Request Pending"    class="send-msg-btn" >
 				{/if}

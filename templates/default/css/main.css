@@ -192,7 +192,7 @@ ul#globalNav li.home-icon:hover {background:url(../images/icon-sprite.png) no-re
 .profile-tbl{margin:20px 0 0 0;}
 .profile-tbl td { border-right:1px solid #cccccc}
 .maincont-inner-lft { width:208px}
-.user-pic {margin-top:50px;}
+.user-pic {margin-top:0px;}
 .user-pic-lft  { width:100px}
 .user-pic-img  { width:100px; height:100px; margin-right:13px}
 .user-pic-rgt { width:82px; margin:10px 10px 0 10px}

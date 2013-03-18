@@ -7,15 +7,12 @@
 <script type="text/javascript" src="{$sitejs}/jquery.timeago.js"></script>
 <script type="text/javascript" src="{$siteroot}/php_ajax_image_upload/scripts/ajaxupload.js"></script>
 
-
-
 {/strip}
 {literal}
 <script type="text/javascript">
 
     jQuery(document).ready(function()
     {
-
         var moduleid = '{/literal}{$smarty.get.id2}{literal}';
         jQuery('#show_thread').html("<img src='"+SITEROOT+"/templates/default/images/site/coming_soon/loadingAnimation.gif' alt='loading' />");
         var txt_friend=$('#txt_friend').val();

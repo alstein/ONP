@@ -653,7 +653,7 @@ function validate(){
               <div id="fb-root" class="fl" ></div>
               <script type="text/javascript">
 						FB.init({ 
-							appId:'271589349611901',
+							appId:'101047238433',
 							cookie:true,
 							status:true,
 							xfbml:true

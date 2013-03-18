@@ -239,6 +239,18 @@ $(document).ready(function() {
 });
 {/literal}
 </script>
+{literal}
+<script type="text/javascript" language="JavaScript">
+    function search_by_category(category_id){
+        $("#cat_ref").val(category_id);
+        document.frmh.submit();
+    }
+    function category_view(category_id){
+        $("#cat").val(category_id);
+        document.frmc.submit();
+    }
+</script>
+{/literal}
 </head>
 <!-- js disabled -->
 <div class="popupbg">

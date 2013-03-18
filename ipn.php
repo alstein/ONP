@@ -18,7 +18,7 @@ $pay_row = @mysql_fetch_assoc($pay_result);
 //Get Merchant Account details for to set dynamic Paypal URL
 
 
-if($pay_row['paypal_account']=="s.sank_1332229646_biz@agiletechnosys.com")
+if($pay_row['paypal_account']=="test@offersnpals.com")
 {
    $url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
 }else{

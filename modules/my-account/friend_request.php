@@ -26,6 +26,8 @@ $l =  $StartRow.','.$adsperpage;
 $tbl  =  "tbl_users u,tbl_friends as f";
 $sf   =  "u.*,f.*";
 
+//echo $_SESSION['csUserId'];
+
 $cnd  =  "((f.userid = u.userid AND  f.friendid=".$_SESSION['csUserId']." AND f.verification='pending'))";
 //$cnd  =  "((f.friendid = u.userid AND  f.userid=".$ids." AND f.verification='panding') AND u.first_name like '$asfa%')";
 $rs=$dbObj->gj($tbl, $sf, $cnd, "", "", "", $l, "");

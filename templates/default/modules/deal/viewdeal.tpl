@@ -69,17 +69,21 @@ if($("#rewardstotal").val().match(numericExpression)){
 $(".close-pop").live("click",function(){
           $("#reward-pop").hide();
 });
+
 $(document).ready(function(){
 	
     $("#clickhere").click(function(){ 
-            $("#reward-pop").show();
-            var widthWrapper = $(".popnew").width();
-            var widthPopup = $(".box-popup").width();
-            var diff = widthWrapper - widthPopup;
-            var poupLeft = $(".box-popup").parent().offset().left;
-            var poupTop = $(window).height()-$(".box-popup").height();
-            $(".box-popup").css("center", poupLeft + diff/2+"px");
-            $(".box-popup").css("top", poupTop/2+"px");
+        if({/literal}'{$smarty.session.csUserTypeId}'{literal} != 2) {
+            window.location="{/literal}{$siteroot}{literal}/login/";
+        }
+        $("#reward-pop").show();
+        var widthWrapper = $(".popnew").width();
+        var widthPopup = $(".box-popup").width();
+        var diff = widthWrapper - widthPopup;
+        var poupLeft = $(".box-popup").parent().offset().left;
+        var poupTop = $(window).height()-$(".box-popup").height();
+        $(".box-popup").css("center", poupLeft + diff/2+"px");
+        $(".box-popup").css("top", poupTop/2+"px");
     });
     $("#close-popup").click(function(){
          var shippingstatuss={/literal}'{$shippingstatus}'{literal};
@@ -452,7 +456,7 @@ $(document).ready(function(){
 				{elseif $deal_status eq 'Expired'}
 					<a href="javascript:void(0)" class="expired-btn"></a>
 
-				{elseif $smarty.session.csUserTypeId eq 2}
+				{elseif $smarty.session.csUserTypeId neq 3}
 					<a href="javascript:void(0)" class="buy-now-btn" id="clickhere"></a>
 
 				{else}
